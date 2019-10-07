@@ -1,0 +1,19 @@
+@charset "utf-8";
+@font-face {
+    font-family:"gugi"; src:local("Gugi-Regular"), url("Gugi-Regular.ttf") format("truetype")
+}
+@font-face {
+    font-family:"gugi"; src:local("Gugi-Regular"), url("Gugi-Regular.eot") format("embedded-opentype")
+}
+@font-face {
+    font-family:"gugi"; src:local("Gugi-Regular"), url("Gugi-Regular.woff") format("woff")
+}
+@font-face {
+    font-family:"note"; src:local("NotoSansKR-Regular"), url("/NotoSansKR-Regular.otf") format("opentype")
+}
+@font-face {
+    font-family:"note"; src:local("NotoSansKR-Regular"), url("NotoSansKR-Regular.eot") format("embedded-opentype")
+}
+@font-face {
+    font-family:"note"; src:local("NotoSansKR-Regular"), url("NotoSansKR-Regular.woff") format("woff")
+}
