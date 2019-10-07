@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "note";
+    src: local("NotoSansKR-Regular"), url("../font/NotoSansKR-Regular.otf") format("opentype")
+}
+
+@font-face {
+    font-family: "note";
+    src: local("NotoSansKR-Regular"), url("../font/NotoSansKR-Regular.eot") format("embedded-opentype")
+}
+
+@font-face {
+    font-family: "note";
+    src: local("NotoSansKR-Regular"), url("../font/NotoSansKR-Regular.woff") format("woff")
+}
+
+@font-face {
+    font-family: "ato";
+    src: local("Atomy-Bold"), url("../font/Atomy-Bold.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "ato";
+    src: local("Atomy-Bold"), url("../font/Atomy-Bold.eot") format("embedded-opentype")
+}
+
+@font-face {
+    font-family: "ato";
+    src: local("Atomy-Bold"), url("../font/Atomy-Bold.woff") format("woff")
+}
