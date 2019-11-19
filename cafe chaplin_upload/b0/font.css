@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "munhwa";
+    src: local("국립박물관문화재단클래식B"), url("../date/font/국립박물관문화재단클래식B.otf") format("opentype"), url("../date/font/국립박물관문화재단클래식B.eot") format("embedded-opentype"), url("../date/font/국립박물관문화재단클래식B.woff") format("woff");
+}
+
+@font-face {
+    font-family: "lotte_happy";
+    src: local("12롯데마트행복Bold"), url("../date/font/12롯데마트행복Bold.ttf") format("truetype"), url("../date/font/12롯데마트행복Bold.eot") format("embedded-opentype"), url("../date/font/12롯데마트행복Bold.woff") format("woff");
+}

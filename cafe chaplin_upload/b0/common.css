@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+body, html{ width: 100%; font-family:"lotte_happy";}
+ul { list-style: none;}
+a {text-decoration: none;}
+img { border: 0;}
+button, input, label { background-color: transparent; border: none; outline: none;}
+
+/*헤더 부분*/
+.wrap { width: 100%; overflow: hidden;}
+#hd { width: 100%; height: 150px; background-image: url("../date/image/top_color.png");}
+.tnb { width: 1300px; height: 50px; margin: 0 auto;}
+.tnb_lst { width: 200px; height: 50px; float: right;}
+.tnb_lst li { float: left; height: 18px; border-right: 1px solid #fff; padding-right: 15px; margin-top: 18px;}
+.tnb_lst .item2 { margin: 18px 20px;}
+.tnb_lst .item3 { border-right: none;}
+.tnb_lst a {display: block; color: #fff; font-size: 18px;}
+.tnb_lst a:hover { color: #ba905c;}
+.gnb { width: 1300px; height: 100px; font-family: "munhwa"; margin: 0 auto;}
+.logo { display: block; margin-top: 15px; float: left;}
+.logo img { display: block; width: 60px; height: 60px; float: left;}
+.logo p { display: block; color: #000; font-size: 30px; margin-left: 2.5em; line-height: 65px;}
+.gnb_lst { float: right; position: relative;}
+.gnb_lst::before { content: ""; display: block; width: 3000px; height: 0px; position: absolute; background-color: #ba905c; top: 100px; left: -810px; transition: 0.5s; border-bottom: 2px solid #fff; z-index: 8; background-image: repeating-linear-gradient(-45deg,#a37e55,#a37e55 1px, #ba905c 0, #ba905c 10px);}
+.gnb_lst:hover::before { height: 210px;}
+.gnb_lst li {float: left; width: 200px; position: relative;}
+.gnb_lst .item1:before { content: ""; display: none; width: 0; height: 0; border-style: solid; border-width: 8px 10px 0px 10px; border-color: #fff transparent transparent transparent; position: absolute; top: 100px; left: 90px; z-index: 99;}
+.gnb_lst .item2:before { content: ""; display: none; width: 0; height: 0; border-style: solid; border-width: 8px 10px 0px 10px; border-color: #fff transparent transparent transparent; position: absolute; top: 100px; left: 90px; z-index: 99;}
+.gnb_lst .item3:before { content: ""; display: none; width: 0; height: 0; border-style: solid; border-width: 8px 10px 0px 10px; border-color: #fff transparent transparent transparent; position: absolute; top: 100px; left: 90px; z-index: 99;}
+.gnb_lst .item4:before { content: ""; display: none; width: 0; height: 0; border-style: solid; border-width: 8px 10px 0px 10px; border-color: #fff transparent transparent transparent; position: absolute; top: 100px; left: 90px; z-index: 99;}
+.gnb_lst li:hover::before { display: block;}
+.gnb_lst a {display: block; font-size: 25px; color: #000; line-height: 100px; text-align: center;}
+.gnb_lst li:hover .submenu {height: 200px;}
+.gnb_lst li:hover .dp1 { color: #ba905c;}
+.gnb_lst a:hover { color: #fff;}
+.submenu { clear: both; position: absolute; height: 0; z-index:9; overflow:hidden; margin-top: 8px; transition: 0.1s;}
+.submenu a { display: block; font-size: 18px; font-family: "lotte_happy"; line-height: 50px;}
+
+/*푸터 영역*/
+#ft { width: 100%; height: 130px; background-color: #58423d;}
+.ft_wrap { width: 1300px; height: 100px; margin: 0px auto;}
+.fnb { width: 820px; height: 20px; float: left; padding-top: 30px;}
+.fnb_lst li { float: left; width: 200px; height: 20px; border-left: 2px solid #fff;}
+.fnb_lst a { display: block; color: #fff; text-align: center; line-height: 20px; font-size: 20px;}
+.fnb_lst .f_item1{ border: none;}
+.fnb_lst a:hover {color:#bc9e8d;}
+.intro { display: block; font-size: 20px; color: #fff; float: right; padding-top: 30px;}
+.copyright { display: block; font-size: 20px; color: #fff; float: right;}
