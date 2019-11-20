@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="카페 예쁜카페 분위기좋은 카페채플린">
+    <meta name="description" content="카페 예쁜카페 분위기좋은 카페채플린">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="../date/image/logo.png">
+    <title>cafe chaplin</title>
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./common.css">
+    <style>
+    #con { width: 100%;}
+    .t_vs {position: relative;}
+    .t_vs .tit { display: block; position: absolute; font-family: "munhwa"; color: #fff; top: 40px; left: 45%; font-size: 50px;}
+    .t_vs .tit::before { content: ""; display: block; position: absolute; width: 200px; height: 5px; background-color: #fff; top: 65px; left: -30px;}
+    .content { width: 1200px; height: 500px; margin: 100px auto; background: #efefee; margin-bottom: 150px;}
+    .log { width: 650px; height: 400px; float: left; margin: 50px auto; border-right: 2px solid #000;}
+    .log_tit { display: block; color: #08223d; font-size: 30px; margin-left: 100px; margin-top: 120px;}
+    .fr { width: 450px; height: 115px; position: relative; margin: 10px auto;}
+    .id { display: block; width: 350px; height: 30px; border: 3px solid #08223d; border-radius: 5px; background: #fff; box-shadow: 2px 2px 2px #ccc inset; text-indent: 20px;}
+    .pw { display: block; width: 350px; height: 30px; border: 3px solid #08223d; border-radius: 5px; background: #fff; margin-top: 10px; box-shadow: 2px 2px 2px #ccc inset; text-indent: 20px;}
+    .go  { display: block; width: 80px; height: 80px; background: #08223d; color: #fff; font-family: "lotte_happy"; font-size: 18px; border-radius: 5px; position: absolute; top: 0px; left: 370px; cursor: pointer;}
+    .check { margin-top: 10px; margin-left: 35px;}
+    .fr label { cursor: pointer; font-size: 14px;}
+    .id_find {margin-left: 30px; color: #000; font-size: 14px;}
+    .join { width: 500px; height: 300px; float: right; margin-top: 125px;}
+    .jo_tit { display: block; color: #08223d; font-size: 35px; letter-spacing: 5px;}
+    .jo_con { display: block; margin-top: 20px; line-height: 40px; font-size: 25px;}
+    .jofi { display: block; margin-top: 30px; font-size: 20px; color: #08223d; border-bottom: 2px solid #08223d; padding-bottom: 5px; width: 120px; text-align: center;}
+    .con { display: block; width: 1200px; clear: both; margin-top: 20px; float: left;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <nav class="tnb">
+                <ul class="tnb_lst">
+                    <li class="item1"><a href="./index.html">Main</a></li>
+                    <li class="item2"><a href="./login.html">Login</a></li>
+                    <li class="item3"><a href="./join.html">Join</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+               <a href="index.html" class="logo">
+                    <img src="../date/image/chaplin_logo.png" alt="카페로고" class="pic">
+                    <p>Cafe Chaplin</p>
+                </a>
+                <ul class="gnb_lst">
+                    <li class="item1">
+                        <a href="./b_menu1.html" class="dp1">BRAND</a>
+                        <ul class="submenu">
+                            <li class="s_item1"><a href="./b_menu1.html">Chaplin 소개</a></li>
+                            <li class="s_item2"><a href="./b_menu2.html">커피이야기</a></li>
+                            <li class="s_item3"><a href="./b_menu3.html">Chaplin BI</a></li>
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <a href="./m_menu1.html" class="dp1">MENU</a>
+                        <ul class="submenu">
+                            <li class="s_item1"><a href="m_menu1.html">Coffee</a></li>
+                            <li class="s_item2"><a href="m_menu2.html">FruitJuice/Ade</a></li>
+                            <li class="s_item3"><a href="m_menu3.html">Tea</a></li>
+                            <li class="s_item4"><a href="m_menu4.html">Dessert</a></li>
+                        </ul>
+                    </li>
+                    <li class="item3">
+                        <a href="./c_menu1.html" class="dp1">COMMUNITY</a>
+                        <ul class="submenu">
+                            <li class="s_item1"><a href="./c_menu1.html">방문후기</a></li>
+                            <li class="s_item2"><a href="./c_menu2.html">QnA</a></li>
+                        </ul>
+                    </li>
+                    <li class="item4">
+                        <a href="./n_menu1.html" class="dp1">NEWS</a>
+                        <ul class="submenu">
+                            <li class="s_item"><a href="./n_menu1.html">Event</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="con">
+            <figure class="t_vs">
+                <img src="../date/image/sub_banner2.png" alt="서브배너이미지">
+                <h1 class="tit">Login</h1>
+            </figure>
+            <div class="content">
+                    <div class="log">
+                        <h2 class="log_tit">LOGIN</h2>
+                        <form action="" class="fr">
+                            <input type="text" class="id">
+                            <input type="password" class="pw">
+                            <input type="submit" class="go" value="로그인">
+                            <input type="checkbox" class="check" id="ck">
+                            <label for="ck">아이디 저장</label>
+                            <a href="#" class="id_find">아이디 / 비밀번호 찾기 ></a>
+                        </form>
+                    </div>
+                    <div class="join">
+                        <h2 class="jo_tit">아직 회원이 아니십니까?</h2>
+                        <p class="jo_con">CafeChaplin의 회원이 되시면<br>더 다양한 활동을<br>즐기실 수 있습니다.</p>
+                        <a href="./join.html" class="jofi">회원가입하기</a>
+                    </div>
+                    <p class="con">기존 회원님은 리뉴얼 된 홈페이지에 실명인증 절차 진행 후, 회원정보가 이관됩니다.<br>로그인이 되지 않는 고객님께서는 biberhadal@naver.com 으로 이름 / 주민등록상의 생년월일 / 아이디/ 전화번호 에 대한 메일을 보내주시면 신속히 처리 하도록 하겠습니다.<br>멤버십 적립 포인트는 이러한 인증 없이도, 매장에서 확인 및 사용 가능 합니다.<br>번거롭게 해드려 죄송합니다, 나날이 발전하는 카페 채플린이 되겠습니다. 감사합니다.</p>
+            </div>
+        </main>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav class="fnb">
+                    <ul class="fnb_lst">
+                        <li class="f_item1"><a href="b_menu1.html">Brand</a></li>
+                        <li class="f_item2"><a href="m_menu1.html">Menu</a></li>
+                        <li class="f_item3"><a href="c_menu1.html">Community</a></li>
+                        <li class="f_item4"><a href="n_menu1.html">News</a></li>
+                    </ul>
+                </nav>
+                <p class="intro">OPEN | AM9:00  CLOSE | PM8:00</p>
+                <p class="copyright">Copyright&copy;2019 Park Co.,LTD ALL RESERVED</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
