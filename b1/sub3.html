@@ -59,6 +59,73 @@
         .sub2 a { display: block; color: #333; text-align: center;}
 /*        메인영역*/
         #con { min-width: 100vw; overflow: hidden; position: relative;}
+         .page_ban { min-width: 100vw; height: 500px; overflow: hidden; position: relative;}
+        .bread { position: absolute; top: 150px; color: #fff; right: 300px; z-index: 9; text-shadow: 2px 2px 5px #333;}
+        .page_ban img { width: 100vw; margin-top: -300px; opacity: 0.8;}
+        .page_tit { position: absolute; top: 45%; left: 38%; color: #fff; font-size: 48px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .page_tit2 { position: absolute; top: 58%; left: 44%; color: #fff; font-size: 30px; text-shadow: 5px 5px 5px #333; z-index: 10;}
+        .btn { max-width: 1000px; height: 100px; margin: 80px auto 0 auto;}
+        .btn li { width: 250px; height: 100px; float: left; border-top: 2px dashed #ddd; border-bottom: 1px solid #333; position: relative;}
+        .btn label { display: block; text-align: center; line-height: 100px; font-size: 23px; cursor: pointer; }
+        .btn li:before { content: ""; display: block; width: 250px; height: 3px; position: absolute; background-color: #333; top: -2px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::before { transform: scale(1);}
+        .btn li:after { content: ""; display: block; width: 250px; height: 3px; position: absolute; background-color: #141784; bottom: 0px;  transition: 0.5s; transform-origin:center; transform: scale(0);}
+        .btn lI:hover::after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:before { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1:after { transform: scale(1);}
+        #ra1:checked ~ .btn .bt_item1 label { color: #141784; }
+        #ra1:checked ~ #page1 { display: block;}
+        #ra2:checked ~ .btn .bt_item2:before { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2:after { transform: scale(1);}
+        #ra2:checked ~ .btn .bt_item2 label { color: #141784; }
+        #ra2:checked ~ #page2 {display: block;}
+        #ra3:checked ~ .btn .bt_item3:before { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3:after { transform: scale(1);}
+        #ra3:checked ~ .btn .bt_item3 label { color: #141784;}
+        #ra3:checked ~ #page3 { display: block;}
+        #ra4:checked ~ .btn .bt_item4:before { transform: scale(1);}
+        #ra4:checked ~ .btn .bt_item4:after { transform: scale(1);}
+        #ra4:checked ~ .btn .bt_item4 label { color: #141784;}
+        #ra4:checked ~ #page4 { display: block;}
+        .rao { display: none;}
+        
+/*        page*/
+        #page1, #page2, #page3, #page4 { min-width: 100vw; height: 100%; overflow: hidden; display: none; margin-top: 80px;}
+        .p_tit { width: 800px; height: 50px; float: left; margin-left: 15%;}
+        .page_name { color: #141784; font-size: 50px; font-family: "mungjo"; float: left; margin-right: 30px; position: relative;}
+        .p_tit img { display: block; width: 50px; height: 50px;}
+        .page_name::after { content: ""; display: block; min-width: 500px; height: 3px; background-color: #141784; position: absolute; top: 60px; left: 0px;}
+        .img_con { clear: both; max-width: 70%; overflow: hidden; margin-left: 15%; margin-top: 100px;}
+        .img_con li { float: left; width: 30%; overflow: hidden; margin-left: 20px; margin-top: 80px; position: relative;}
+        .img_con img { width: 100%; transition: 0.5s;}
+        .img_tit { position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); top: 0; left: 0; color: #fff; font-size: 25px; text-align: center; line-height: 250px; display: none; transition: 0.5s;}
+        .mor { position: absolute; top: 60%; left: 38%; color: #fff; width: 100px; height: 40px; text-align: center; line-height: 40px; border: 1px solid #fff; display: none; transition: 0.5s;}
+        .mor:hover { background-color: rgba(255,255,255,0.7); color: #333;}
+        .img_con li:hover img { transform: scale(2);}
+        .img_con li:hover .img_tit { display: block;}
+        .img_con li:hover .mor { display: block;}
+        .ck { display: none;}
+/*        page2*/
+        #page2 .img_tit { line-height: 200px;}
+        #page2 .mor { top: 60%;}
+        
+/*        page3*/
+        .cho_box { max-width: 1000px; height: 80px; border: 3px solid #141784; border-radius: 10px; margin: 0px auto 100px auto;}
+        .cho_box li { float: left; width: 33%;}
+        .cho_box label { display: block; text-align: center; line-height: 80px; font-size: 20px; cursor: pointer; position: relative;}
+        .cho_box label::before { content: ""; display: none; width: 20px; height: 20px; background-image: url("./date/check.png"); position: absolute; background-size: 20px 20px; top: 32%; left: 35%; }
+        #cj1:checked ~ #mon { display: block;}
+        #cj1:checked ~ .cho_box .ch_item1 label { color: #141784;}
+        #cj1:checked ~ .cho_box .ch_item1 label::before { display: block;}
+        #ck2:checked ~ .val { display: block;}
+        #ck2:checked ~ .cho_box .ch_item2 label { color: #141784;}
+        #ck2:checked ~ .cho_box .ch_item2 label::before { display: block;}
+        #ck3:checked ~ .fal { display: block;}
+        #ck3:checked ~ .cho_box .ch_item3 label { color: #141784;}
+        #ck3:checked ~ .cho_box .ch_item3 label::before { display: block;}
+        #mon { display: none;}
+        .val { display: none;}
+        .fal { display: none;}
         
 /*        푸터영역*/
         #ft { min-width: 100vw; height: 100px; background-color: #333; margin-top: 200px;}
