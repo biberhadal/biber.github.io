@@ -22,7 +22,7 @@
         .page_wrap2 li { width: 29%; height: 280px; float: left; margin-left: 35px; margin-bottom: 30px; overflow: hidden; box-sizing: border-box;}
         .page_wrap2 li:hover { border: 3px solid #141784;}
         .page_wrap2 .n_item1 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo new1.jpg"); background-position: center;}
-        .page_wrap2 .n_item2 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news2.Jpg"); background-position: center;}
+        .page_wrap2 .n_item2 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news2.JPG"); background-position: center;}
         .page_wrap2 .n_item3 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news4.JPG"); background-position: center;}
         .page_wrap2 .n_item4 a { display: block; width: 100%; height: 100%; background-image: url("./date/photo news3.jpg"); background-position: center;}
         .page_wrap2 .col4 { width: 61%; background-color: #ddd; }
