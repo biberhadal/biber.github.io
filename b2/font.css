@@ -1,10 +1,10 @@
 @charset "utf-8";
 @font-face {
-    font-family:"gugi"; src:local("Gugi-Regular"), url("Gugi-Regular.ttf") format("truetype"), url("Gugi-Regular.eot") format("embedded-opentype")
-    ,url("Gugi-Regular.woff") format("woff")
+    font-family:"gugi"; src:local("Gugi-Regular"), url("./font/Gugi-Regular.ttf") format("truetype"), url("./font/Gugi-Regular.eot") format("embedded-opentype")
+    ,url("./font/Gugi-Regular.woff") format("woff")
 }
 
 
 @font-face {
-    font-family:"note"; src:local("NotoSansKR-Regular"), url("/NotoSansKR-Regular.otf") format("opentype"), url("NotoSansKR-Regular.eot") format("embedded-opentype"), url("NotoSansKR-Regular.woff") format("woff")
+    font-family:"note"; src:local("NotoSansKR-Regular"), url("./font/NotoSansKR-Regular.otf") format("opentype"), url("./font/NotoSansKR-Regular.eot") format("embedded-opentype"), url("./font/NotoSansKR-Regular.woff") format("woff")
 }

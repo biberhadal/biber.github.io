@@ -33,85 +33,47 @@
    <meta property="al:android:app_store_id" content="안드로이드앱스토어 id">
 <!--   바로가기 설정 정보-->
    <link rel="canonical" href="메인페이지주소">
-   <link rel="shortcut icon" type="" href="./date/favicon_16x16px.png">
+   <link rel="shortcut icon" type="" href="./date/favicon_64x64px.png">
    <link rel="stylesheet" href="./font.css">
+   <link rel="stylesheet" href="./common.css">
+   <link rel="stylesheet" href="./main.css">
     <title>홍성역사인물축제</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148900025-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148900025-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-148900025-1');
-</script>
-<style>
-    * { margin: 0; padding: 0;}
-    body, html { width: 100%; height: 100%; font-family: "note";}
-    a { text-decoration: none;}
-    ul { list-style: none;}
-    .wrap { width: 100%; height: 100%; overflow-x: hidden;}
-/*    헤더 부분*/
-    .hd { width: 100%; height: 150px; background-image: url("./date/top_color.jpg");position: relative; }
-    .hd_wrap { display: block; width: 1300px; height: 150px; margin: 0 auto; }
-    .hd_wrap:first-child { width: 1000px; height: 50px;}
-    .hlogo { display: block; width: 64px; height: 40px; float: left; margin-top: 5px;}
-    .info_box { color: #fff; line-height: 50px; text-indent: 150px; font-size: 15px; float: left; letter-spacing: 2px;}
-    .tnb { float: right; }
-    .tnb li { float: left; margin-left: 20px;}
-    .tnb a { color: #fff; line-height: 50px; font-size: 15px; border-left: 1px solid #fff; padding-left: 20px;}
-    .tnb .f_a { border: none;}
-    .tnb a:hover { color: #333;}
-    .logo { display: block; background-image: url("./date/f_logo.png"); width: 200px; height: 50px; float: left; margin-top: 25px;}
-    .gnb { width: 800px; float: left; margin-left: 20px;}
-    .gnb:before { content: ""; display: block; width: 100vw; height: 0px; background-color: #fff; position: absolute; left: 0; top: 150px; transition: 0.5s; z-index: 9;}
-    .gnb:hover::before { height: 250px;}
-    .gnb li { float: left; width: 200px;}
-    .gnb a { display: block; line-height: 100px; font-family: "gugi"; color: #333; font-size: 25px; text-align: center;}
-    .gnb:hover .submenu { height: 250px;}
-    .gnb li:hover .hs1 { color: #a43521;}
-    .submenu { display: block; position: absolute; overflow: hidden; height: 0; transition: 0.5s; margin-top: -15spx; z-index: 9;}
-    .submenu li { clear: both; width: 150px; height: 60px; margin-left: 20px;}
-    .submenu a { display: block; font-size: 16px; font-family: "note"; line-height: 30px;}
-    .submenu li:hover a { border-bottom: 3px solid #a43521;}
-    .frm1 {float: left;}
-    .search { display: block; width: 45px; height: 30px; background-color: #a49274; background-image: url(./date/search_icon.png); background-repeat: no-repeat; background-position: center; border-radius: 10px; background-size: 25px 25px; cursor: pointer; float: left; margin-top: 33px; margin-right: 30px;}
-    .sel { display: block; float: left; width: 150px; height: 30px; margin-top: 33px; margin-right: -1px; border-radius: 5px 0 0 5px;}
-    .go { display: block; width: 30px; height: 30px; margin-top: 33px; background-color: transparent; border: 1px solid #aaa; border-left: none; cursor: pointer; border-radius: 0 5px 5px 0;}
-    #search_form { display: block; position: absolute; background-color: #fff; width: 100vw; height: 0px; left: 0;  transition: 0.5s; overflow: hidden; top: 150px; z-index: 99;}
-    .close_btn { display: block; width: 20px; height: 20px; background-image: url("./date/close_btn.png"); background-size: 20px 20px; float: right; margin-right: 350px; margin-top: 20px; cursor: pointer;}
-    #keyword { display: block; width: 800px; height: 50px; margin: 0 auto; margin-top: 85px; border-radius: 20px; border : 2px solid #666; text-indent: 20px;}
-    .search_btn { display: block; width: 30px; height: 30px; background-image: url(./date/search_icon.png); background-color: transparent; border: none; position: absolute; top: 96px; right: 590px;}
-    #ck1 {display: none;}
-    #ck1:checked+#search_form { height: 250px;}
-/*    메인부분*/
-    .con { width: 100%; min-height: 100%;}
-    #vs { width: 100%; height: 700px; overflow: hidden; background-color: #333; position: relative;}
-    .img_box { width: 300%;}
-    .img_box li { clear: both; margin-right: 10px; transition: 0.5s;}
-    .img_box img { width: 1230px; height: 700px; margin-left: 330px; }
-    .btn_box { width: 200px; height: 20px; position: absolute; bottom: 35px; left: 800px;}
-    .btn_box li { float: left; width: 15px; height: 15px; margin-left: 40px;}
-    .btn_box label { display: block; width: 15px; height: 15px; background-color: rgba(255,255,255,0.6); border-radius: 20px; cursor: pointer; transition: 0.3s;}
-    .rad { display: none;}
-    #ra1:checked~.img_box .item1 { margin-top: 0;}
-    #ra2:checked~.img_box .item2 { margin-top: -705px;}
-    #ra3:checked~.img_box .item3 { margin-top: -1410px;}
-    #ra1:checked~.btn_box .btn1 { background-color: #a43521; width: 25px;}
-    #ra2:checked~.btn_box .btn2 { background-color: #a43521; width: 25px;}
-    #ra3:checked~.btn_box .btn3 { background-color: #a43521; width: 25px;}
-    .icon_box { width: 80px; height: 400px; position: absolute; right: 345px; top: 60px;}
-    .ico_fr { clear: both; width: 80px; height: 80px; background-color: rgba(164,53,53,0.8); border-radius: 100px; margin-top: 50px; transition: 0.3s;}
-    .ico_fr a { display: block; text-align: center; line-height: 80px; font-family: "gugi"; color: #fff; transition: 0.3s;}
-    .ico_fr:before { content: ""; display: block; width: 30px; height: 30px;  background-size: 30px 30px; position: absolute; left: 25px; margin-top: 12px; transition: 0.3s; cursor: pointer;}
-    #ico1:hover::before { background-image: url(./date/event.png);}
-    #ico2:hover::before { background-image: url(./date/show.png);}
-    #ico3:hover::before {background-image: url(./date/experience.png);}
-    .ico_fr:hover {transform: scale(1.2);}
-    .ico_fr:hover a { color: yellow; line-height: 110px; }
-    .vs_box { width: 100%; height: 600px; }
-    .col_box { width: 1500px; height: 600px;}
-</style>
+      gtag('config', 'UA-148900025-1');
+    </script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            function nextAni(){
+                $(".img_box").not(":animated").animate({"margin-top":"-700px"},500,function(){
+                    $(".img_box li").eq(0).appendTo($(".img_box"));
+                    $(".img_box").css("margin-top","0px");
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".btn_box li button").removeClass("on");
+                    $(".btn_box li").eq(0).find("button").addClass("on");
+                });
+            }
+            var intv = setInterval(function(){nextAni();},2900);
+            $(".btn_box li").click(function(){
+                clearInterval(nextAni);
+                var idx=$(this).index();
+                if(idx!=0){
+                    for(a=0;a<idx-1;a++){
+                        $(".img_box li").eq(0).appendTo($(".img_box"));
+                        $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    }
+                    nextAni();
+                }
+                intv=setInterval(function(){nextAni();},2900);
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -133,78 +95,75 @@
                 <nav class="gnb">
                     <ul>
                         <li>
-                            <a href="sub1.html" class="hs1">축제소개</a>
+                            <a href="./sub1.html" class="hs1">축제소개</a>
                             <ul class="submenu">
-                                <li><a href="sub11.html">인사말</a></li>
-                                <li><a href="sub12.html">홍성역사인물</a></li>
-                                <li><a href="sub13.html">홍성오시는길</a></li>
+                                <li><a href="./sub1.html#page1">인사말</a></li>
+                                <li><a href="./sub1.html#page2">홍성역사인물</a></li>
+                                <li><a href="./sub1.html#page3">홍성오시는길</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="sub2.html" class="hs1">축제안내</a>
+                            <a href="./sub2.html" class="hs1">축제안내</a>
                             <ul class="submenu">
-                                <li><a href="sub21.html">축제일정표</a></li>
-                                <li><a href="sub22.html">축제장배치도</a></li>
-                                <li><a href="sub23.html">대표행사/체험행사</a></li>
-                                <li><a href="sub24.html">공연행사</a></li>
+                                <li><a href="./sub2.html#page1">축제일정표</a></li>
+                                <li><a href="./sub2.html#page2">축제장배치도</a></li>
+                                <li><a href="./sub2.html#page3">대표행사/체험행사</a></li>
+                                <li><a href="./sub2.html#page4">공연행사</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="sub3.html" class="hs1">축제앨범</a>
+                            <a href="./sub3.html" class="hs1">축제앨범</a>
                             <ul class="submenu">
-                                <li><a href="sub31.html">축제사진</a></li>
-                                <li><a href="sub32.html">축제동영상</a></li>
-                                <li><a href="sub33.html">카드뉴스</a></li>
+                                <li><a href="./sub3.html#page1">축제사진</a></li>
+                                <li><a href="./sub3.html#page2">축제동영상</a></li>
+                                <li><a href="./sub3.html#page3">카드뉴스</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="sub4.html" class="hs1">참여마당</a>
+                            <a href="./sub4.html" class="hs1">참여마당</a>
                             <ul class="submenu">
-                                <li><a href="sub41.html">공지사항</a></li>
-                                <li><a href="sub42.html">언론보도</a></li>
-                                <li><a href="sub43.html">Q&amp;A</a></li>
-                                <li><a href="sub44.html">축제후기</a></li>
+                                <li><a href="./sub4.html#page1">공지사항</a></li>
+                                <li><a href="./sub4.html#page2">언론보도</a></li>
+                                <li><a href="./sub4.html#page3">Q&amp;A</a></li>
+                                <li><a href="./sub4.html#page4">축제후기</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
                 <form action="" class="frm1">
-                <label for="ck1" class="search"></label>
-                <select class="sel">
-                    <option value="">English</option>
-                    <option value="">中文</option>
-                    <option value="">日本語</option>
-                    <option value="">한국어</option>
-                </select>
-                <button class="go">GO</button>
-                <input type="checkbox" id="ck1">
-                <div id="search_form">
-                    <label for="ck1" class="close_btn"></label>
-                    <input type="text" id="keyword" class="search_text">
-                    <input type="submit" class="search_btn" value="">
-                </div>
+                    <label for="ck1" class="search"></label>
+                    <select class="sel">
+                        <option value="">English</option>
+                        <option value="">中文</option>
+                        <option value="">日本語</option>
+                        <option value="">한국어</option>
+                    </select>
+                    <button class="go">GO</button>
+                    <input type="checkbox" id="ck1">
+                    <div id="search_form">
+                        <label for="ck1" class="close_btn"></label>
+                        <input type="text" id="keyword" class="search_text">
+                        <input type="submit" class="search_btn" value="">
+                    </div>
                 </form>
             </div>
         </header>
         <main class="con">
             <figure id="vs">
-                <input type="radio" name="ck" class="rad" id="ra1" checked>
-                <input type="radio" name="ck" class="rad" id="ra2">
-                <input type="radio" name="ck" class="rad" id="ra3">
                 <ul class="img_box">
                     <li class="item1"><img src="./date/hosung_banner1.jpg" alt="배너1" class="pic1"></li>
                     <li class="item2"><img src="./date/hosung_banner2.jpg" alt="배너2" class="pic2"></li>
                     <li class="item3"><img src="./date/hosung_banner3.jpg" alt="배너3" class="pic3"></li>
                 </ul>
                 <ul class="btn_box">
-                    <li><label for="ra1" class="btn1"></label></li>
-                    <li><label for="ra2" class="btn2"></label></li>
-                    <li><label for="ra3" class="btn3"></label></li>    
+                    <li class="b_item1"><button class="on"></button></li>
+                    <li class="b_item2"><button></button></li>
+                    <li class="b_item3"><button></button></li>   
                 </ul>
                 <ul class="icon_box">
-                        <li class="ico_fr" id="ico1"><a href="">대표행사</a></li>
-                        <li class="ico_fr" id="ico2"><a href="">공연행사</a></li>
-                        <li class="ico_fr" id="ico3"><a href="">체험행사</a></li>
+                        <li class="ico_fr" id="ico1"><a href="./sub2.html#page3">대표행사</a></li>
+                        <li class="ico_fr" id="ico2"><a href="./sub2.html#page3">공연행사</a></li>
+                        <li class="ico_fr" id="ico3"><a href="./sub2.html#page4">체험행사</a></li>
                     </ul>
             </figure>
             <div class="vs_box">
@@ -215,32 +174,42 @@
                                 <p class="col_com">홍성역사인물 6인을 소개합니다</p>
                             </div>
                             <ul class="lst">
-                                <li><a href="">
-                                        <img src="./date/choiyoung.png" alt="최영장군캐릭터">
-                                        <h4 class="cate_tit">최영</h4>
-                                        <p class="cate_com">1316~1388</p>
-                                        <img src="./date/go_button.png" alt="이동버튼">
-                                        <img src="./date/sungsamon.png" alt="성삼문캐릭터">
-                                        <h4 class="cate_tit">성삼문</h4>
-                                        <p class="cate_com">1418~1456</p>
-                                        <img src="./date/go_button.png" alt="이동버튼">
-                                        <img src="./date/hanyongwun.png" alt="한용운캐릭터">
-                                        <h4 class="cate_tit">한용운</h4>
-                                        <p class="cate_com">1879~1944</p>
-                                        <img src="./date/go_button.png" alt="이동버튼">
-                                        <img src="./date/kimjoajin.png" alt="김좌진캐릭터">
-                                        <h4 class="cate_tit">김좌진</h4>
-                                        <p class="cate_com">1889~1930</p>
-                                        <img src="./date/go_button.png" alt="이동버튼">
-                                        <img src="./date/hansungjun.png" alt="한성준캐릭터">
-                                        <h4 class="cate_tit">한성준</h4>
-                                        <p class="cate_com">1875~1941</p>
-                                        <img src="./date/go_button.png" alt="이동버튼">
-                                        <img src="./date/leeungno.png" alt="이응노캐릭터">
-                                        <h4 class="cate_tit">이응노</h4>
-                                        <p class="cate_com">1904~1989</p>
-                                        <img src="./date/go_button.png"ㄴ alt="이동버튼">
-                                    </a></li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/choiyoung.png" alt="최영장군">
+                                        <h4>무민공 최영</h4>
+                                    </a>
+                                </li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/sungsamon.png" alt="성삼문">
+                                        <h4>매죽헌 성삼문</h4>
+                                    </a>
+                                </li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/hanyongwun.png" alt="한용운">
+                                        <h4>만해 한용운</h4>
+                                    </a>
+                                </li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/kimjoajin.png" alt="김좌진">
+                                        <h4>백야 김좌진</h4>
+                                    </a>
+                                </li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/hansungjun.png" alt="한성준">
+                                        <h4>한성준</h4>
+                                    </a>
+                                </li>
+                                <li class="lst_item">
+                                    <a href="./sub1.html#page2">
+                                        <img src="./date/leeungno.png" alt="이응노">
+                                        <h4>이응노</h4>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="col_li">
@@ -249,21 +218,27 @@
                                 <p class="col_com">홍성역사인물축제에서의 즐거운 추억!</p>
                             </div>
                             <ul class="lst">
-                                <li><a href="">
-                                        <img src="./date/hosung_pic1.jpg" alt="축제사진1">
-                                        <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
-                                        <p class="cate_com">2019-07-25</p>
-                                    </a></li>
-                                    <li><a href="">
-                                        <img src="./date/hosung_pic2.jpg" alt="축제사진2">
-                                        <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
-                                        <p class="cate_com">2019-07-25</p>
-                                    </a></li>
-                                    <li><a href="">
-                                        <img src="./date/hosung_pic3.jpg" alt="축제사진3">
-                                        <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
-                                        <p class="cate_com">2019-07-25</p>
-                                    </a></li>
+                                    <li class="lst_li">
+                                        <a href="./sub3.html#page1">
+                                            <img src="./date/hosung_pic1.jpg" alt="축제사진1">
+                                            <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
+                                            <p class="cate_com">2019-07-25</p>
+                                        </a>
+                                    </li>
+                                    <li class="lst_li">
+                                       <a href="./sub3.html#page1">
+                                            <img src="./date/hosung_pic2.jpg" alt="축제사진2">
+                                            <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
+                                            <p class="cate_com">2019-07-25</p>
+                                        </a>
+                                    </li>
+                                    <li class="lst_li">
+                                       <a href="./sub3.html#page1">
+                                            <img src="./date/hosung_pic3.jpg" alt="축제사진3">
+                                            <h4 class="cate_tit">2019 홍성역사인물축제 홍보 포토존</h4>
+                                            <p class="cate_com">2019-07-25</p>
+                                        </a>
+                                    </li>
                             </ul>
                         </li>
                         <li class="col_li">
@@ -271,17 +246,29 @@
                                 <h3 class="col_tit">축제후기</h3>
                                 <p class="col_com">여러분의 즐거웠던 추억을 이야기 해주세요!</p>
                             </div>
-                            <ul class="lst">
-                                <li><a href="">
-                                        <h4 class="cate_tit">아름답습니다.</h4>
-                                        <p class="cate_com">2018-09-15</p>
-                                        <h4 class="cate_tit">홍성인물축제가본 후기!</h4>
-                                        <p class="cate_com">2017-09-24</p>
-                                    </a></li>
+                            <ul class="lst4">
+                                <li>
+                                    <a href="./sub4.html#page4" class="hu">
+                                        <h4>교육적인 축제로 너무 좋았습니다.</h4>
+                                        <p>2019.10.18</p>
+                                    </a>
+                                    <a href="./sub4.html#page4" class="hu">
+                                        <h4>2019 홍성역사인물축제</h4>
+                                        <p>2019.10.02</p>
+                                    </a>
+                                    <a href="./sub4.html#page4" class="hu">
+                                        <h4>아름답습니다.</h4>
+                                        <p>2018.09.15</p>
+                                    </a>
+                                    <a href="./sub4.html#page4" class="hu">
+                                        <h4>홍성인물축제가본 후기!</h4>
+                                        <p>2017.09.24</p>
+                                    </a>
+                                </li>
                             </ul>
                             <ul class="thum_lst">
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
+                                <li><a href="./sub1.html#page3"><img src="./date/e_guide.png" alt="축제장안내도"></a></li>
+                                <li><a href="./sub1.html#page3"><img src="./date/t_guide2.png" alt="교통안내"></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -289,15 +276,15 @@
         </main>
         <footer id="ft">
             <div class="ft_wrap">
-                <div class="ft_qr"></div>
+                    <img src="./date/ft_qr.png" alt="QR">
                     <nav id="fnb">
                         <ul>
-                            <li><a href="">이메일수신거부</a></li>
-                            <li><a href="">개인정보처리방침</a></li>
-                            <li><a href="">오시는길</a></li>
+                            <li><a href="#">이메일수신거부</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="./sub4.html#page3">오시는길</a></li>
+                            <p class="copyright">copyright&copy;2019 hongsung All Rights Reserved</p>
                         </ul>
-                    </nav>
-                    <p class="copyright">copyright&copy;2019 hongsung All Rights Reserved</p>
+                    </nav>                   
             </div>
         </footer>
     </div>
