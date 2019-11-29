@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!--  화면 사이즈 변환하는 태그(모바일 태그 입력 시 꼭 필요)-->
+<!--  모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+<!--  안드로이드-->
+   <meta name="mobile-web-app-capable" content="yes">
+<!--  ios-->
+   <meta name="apple-mobile-web-app-capable" content="yes">
+<!--   자바스크립트로 모바일 웹 주소창 숨기기-->
+    <script>
+        window.addEventListener('load',function(){
+            //body의 height를 살짝 늘리는 코드
+            document.body.style.height = 
+            (document.documentElement.clientHeight+5)+'px';
+            //scroll를 제어하는 코드
+            setTimeout(function(){window.scrollTo(0,1);},100);
+        });
+    </script>
+    <meta name="author" content="seul">
+<!--    홈페이지 제작자 이름 기재-->
+    <meta name="keywords" content="노랑풍선, 여행을 가볍게, 해외여행, 국내여행, 여행사이트">
+    <meta name="description" content="노랑풍선, 여행을 가볍게, 해외여행, 국내여행, 여행사이트">
+    <meta property="og:title" content="노랑풍선">
+    <meta property="og:keywords" content="여행을 가볍게 노랑풍선">
+    <meta property="og:description" content="여행을 가볍게, 노랑풍선, 여행사이트">
+    <meta property="og:image" content="">
+    <meta property="fb:app_id" content="https://www.facebook.com/yellowballoonofficial/">
+    <meta property="twitter:card" content="여행을 가볍게, 노랑풍선">
+    <meta property="twitter:title" content="노랑풍선">
+    <meta property="twitter:description" content="여행을 가볍게, 노랑풍선, 해외여행, 국내여행, 여행사이트">
+    <meta property="twitter:image" content="../date/img/yellow_icon.png">
+    <link rel="shortcut icon" href="../date/icon/yellow_icon.png" type="image/png">
+<!--    x-icon 사용 CDN-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="font.css">
+    <title>노랑풍선</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".gnb_lst li a").click(function(){
+                var tar = parseInt($(this).attr("data-index"));
+                var ofs = $("#page"+tar).offset();
+                var sc = ofs.top;
+                $("body, html").animate({scrollTop:sc},500);
+                $("#ck1").prop("checked",false); //prop 메서드는 form 요소에서만 사용
+            }); //스크롤 부드럽게 이동하기
+            function nextAni(){
+                $(".img_box").not(":animated").animate({"margin-left":"-100%"},400,function(){
+                    $(".img_box li").removeClass("on");
+                    $(".img_box li").eq(0).appendTo($(".img_box"));
+                    $(".img_box").css("margin-left","0px");
+                    $(".img_box li").eq(0).addClass("on");
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".btn_box li button").removeClass("on");
+                    $(".btn_box li").eq(0).find("button").addClass("on");
+                });
+            }
+           var intv = setInterval(function(){nextAni();},2900);
+            $(".btn_box li").click(function(){
+                clearInterval(intv);
+                var idx = $(this).index();
+                if(idx!=0){
+                    for(a=0;a<idx-1;a++){
+                        $(".btn_box li").eq(0).appendTo(".btn_box");
+                        $(".img_box li").eq(0).appendTo(".img_box");
+                    }
+                    nextAni();
+                }
+                intv = setInterval(function(){nextAni();},2900);
+            });
+            $(".b_item1 .xi-search").click(function(){
+                $("#search").fadeIn();
+            });
+            $("#search .xi-close").click(function(){
+                $("#search").fadeOut();
+            });
+            $(".b_item2 .xi-user").click(function(){
+                $("#login").fadeIn();
+            });
+            $("#login .xi-close").click(function(){
+                $("#login").fadeOut();
+            });
+        }); 
+    </script>
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100%; font-family: "netma";}
+        ul { list-style: none;}
+        a { text-decoration: none;}
+        input, label, button { background-color: transparent; border: 0; outline: 0;}
+        .wrap { width: 100%; position: relative;}
+        
+/*        헤더영역*/
+        #hd { width: 100vw; height: 100%;}
+/*        상단 헤더영역*/
+        .hd_wrap { width: 100vw; height: 90px; background-color: #ffc72d; position: absolute;}
+        #ck1 { display: none;}
+        .logo { display: block; width: 120px; margin-top: 33px; margin-left: 20px; float: left;}
+        .logo img { width: 120px;}
+        .m_btn { float: right; display: block; font-size: 35px; color: #fff; margin-top: 28px; margin-right: 20px; position: relative;}
+        #hd .xi-close { display: none; position: absolute; top: 5px; right: 0px;}
+        #ck1:checked ~ .hd_wrap .m_btn .xi-bars { display: none;}
+        #ck1:checked ~ .hd_wrap .m_btn .xi-close { display: block;}
+/*        메뉴영역*/
+        .gnb_wrap { width: 0; height: 100vh; background-color: #222; position: absolute; z-index: 9; top: 0; left: 0; overflow: hidden; transition: 0.5s;}
+        .gnb_wrap img { display: block; width: 120px; margin-top: 33px; margin-left: 20px; float: left;}
+        .gnb_lst { clear: both; width: 100%; height: 400px; margin-top: 160px;}
+        .gnb_lst li { width: 100%; height: 80px; box-sizing: border-box; border-bottom: 1px solid #fff;}
+        .gnb_lst a { display: block; text-align: center; line-height: 110px; color: #fff; font-family: "nuri"; font-size: 30px;}
+        .bnb_lst { width: 150px; margin: 110px auto;}
+        .bnb_lst li { width: 48%; float: left; position: relative;}
+        .bnb_lst a { display: block; color: #fff; font-size: 28px; text-align: center;}
+        .b_item1::after { content: ""; display: block; width: 2px; height: 20px; background-color: #fff; position: absolute; top: 8px; right: 0;}
+        #ck1:checked ~ .gnb_wrap { width: 80%;}
+        
+/*        main 영역*/
+        #con { width: 100vw; height: 100%;}
+/*        슬라이드 영역*/
+        .vs { width: 100vw; height: 100vh; overflow: hidden;}
+        .img_box  {width: 400%; height: 100%;}
+        .img_box li { width: 25%; height: 100%; float: left; background-repeat: no-repeat;}
+        .i_item1 { background-image: url("./date/img/slide/silde1.png");}
+        .i_item2 { background-image: url("./date/img/slide/silde2.png");}
+        .i_item3 { background-image: url("./date/img/slide/silde3.png");}
+        .i_item4 { background-image: url("./date/img/slide/silde4.png");}
+        .img_box img { height: 100%; display: block;}
+        .i_tit { visibility: hidden; opacity: 0; transition: 0.5s;}
+        .img_box li.on .i_tit { visibility: visible; opacity: 1;}
+        .img_box h1:first-child { margin-top: 70%; margin-left: 15px; color: #fff; font-size: 45px; font-family: "nuri"; text-shadow: 2px 2px 5px #333;}
+        .img_box p { display: block; color: #fff; font-size: 25px; font-family: "nuri"; margin-left: 15px; text-shadow: 2px 2px 5px #333;}
+        .img_box a { display: block; color: #fff; width: 120px; height: 35px; border: 2px solid #fff; border-radius: 2px; text-align: center; line-height: 35px; font-size: 20px; margin-left: 15px; margin-top: 20px; box-shadow: 2px 2px 5px #555; text-shadow: 2px 2px 5px #333;}
+        .img_box h1:nth-child(2) { margin-left: 15px; color: #ffc72d; font-size: 45px; font-family: "nuri"; margin-top: 5px; position: relative; text-shadow: 2px 2px 5px #333;}
+        .img_box h1:nth-child(2):after { content: ""; display: block; width: 80%; height: 3px; background-color: #fff; margin: 15px 0; box-shadow: 2px 2px 5px #333;}
+        .btn_box { position: absolute; width: 150px; height: 20px; top: 18%; left: 115px;}
+        .btn_box li { position: absolute; width: 20px; height: 20px; border-radius: 15px; background-color: rgba(255,255,255,0.7); cursor: pointer;}
+        .btn_box button { position: absolute; width: 20px; height: 20px; border-radius: 15px; background-color: rgba(255,255,255,0.7); cursor: pointer;}
+        .btn_box .bt_item1 { left: 0;}
+        .btn_box .bt_item2 { left: 40px;}
+        .btn_box .bt_item3 { left: 80px;}
+        .btn_box .bt_item4 { left: 120px;}
+        .btn_box .on { background-color: #ffc72d;}
+/*        page1 영역*/
+        #page1 { width: 100vw; height: 100vh;}
+        .page_tit { text-align: center; line-height: 200px; font-size: 45px; font-family: "nuri"; position: relative;}
+        .page_tit:after {content: ""; display: block; width: 230px; height: 3px; background-color: #ffc72d; position: absolute; top: 140px; left: 20%;}
+        #page1 img { display: block; margin : 0 auto; width: 80%; }
+        #page1 a { display: block; width: 200px; height: 50px;  margin : 85px; text-align: center; line-height: 50px; font-size: 25px; color: #ffc72d; border: 2px solid #ffc72d;}
+/*        page2 영역*/
+        #page2 { width: 100vw; height: 100vh; background: #eee;}
+        #page2 .page_tit {text-align: center; line-height: 150px; font-size: 45px; font-family: "nuri"; position: relative;}
+        #page2 .page_tit:after {content: ""; display: block; width: 230px; height: 3px; background-color: #ffc72d; position: absolute; top: 120px; left: 20%;}
+        #page2 div { width: 65%; margin: 0px auto 20px auto; position: relative;}
+        #page2 div img { width: 100%;}
+        #page2 .img1 .img_tit { left: 26%;}
+        #page2 .img_tit { position: absolute; color: #fff; top: 40px; left: 23%; text-shadow: 1px 1px 5px #555;}
+        #page2 a { display: block; width: 200px; height: 50px;  margin : 30px auto 0 auto; text-align: center; line-height: 50px; font-size: 25px; color: #ffc72d; border: 2px solid #ffc72d; background-color: #fff;}
+/*        page3 영역*/
+        #page3 { width: 100vw; height: 100vh;}
+        #page3 .page_tit {text-align: center; line-height: 150px; font-size: 45px; font-family: "nuri"; position: relative;}
+        #page3 .page_tit:after {content: ""; display: block; width: 230px; height: 3px; background-color: #ffc72d; position: absolute; top: 120px; left: 20%;}
+        #page3 div { width: 65%; margin: 0px auto 20px auto; position: relative;}
+        #page3 div img { width: 100%;}
+        #page3 .img_tit { position: absolute; color: #fff; top: 40px; left: 32%; text-shadow: 1px 1px 5px #333;}
+        #page3 a { display: block; width: 200px; height: 50px;  margin : 30px auto 0 auto; text-align: center; line-height: 50px; font-size: 25px; color: #ffc72d; border: 2px solid #ffc72d; background-color: #fff;}
+/*        page4 영역*/
+        #page4 { width: 100vw; height: 100vh; background-color: #eee;}
+        #page4 img { display: block; margin : 0 auto; width: 80%; }
+        #page4 a { display: block; width: 200px; height: 50px;  margin : 85px; text-align: center; line-height: 50px; font-size: 25px; color: #ffc72d; border: 2px solid #ffc72d; background-color: #fff;}
+/*        푸터영역*/
+        #ft { width: 100vw; height: 50px; background-color: #333;}
+        #ft p { color: #fff; display: block; text-align: center; line-height: 50px;}
+        
+/*        로그인 영역*/
+        #login { width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.7); position: absolute; z-index: 99; top: 0; left: 0; display: none;}
+        #frm2 { width: 70%; height: 50%; background-color: #fff; margin: 50% auto;}
+        #frm2 span { display: block; width: 30px; height: 30px; color: #333; font-size: 25px; float: right; margin-right: 8px; margin-top: 10px;}
+        #frm2 img { display: block; width: 180px; clear: both; margin: 30px 40px; float: left;}
+        #frm2 input { display: block; clear: both; width: 80%; height: 45px; box-sizing: border-box; border: 3px solid #ffc72d; margin : 20px auto; border-radius: 10px; text-indent: 10px;}
+        #frm2 input[type="submit"] { background-color: #ffc72d; text-indent: 0px; font-weight: bold;}
+        
+/*        search 영역*/
+        #search { width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.7); position: absolute; z-index: 99; top: 0; left: 0; display: none;}
+        #frm1 { position: relative; margin-top: 90%; margin-left: 30px;}
+        #frm1 span { width: 30px; height: 30px; color: #fff; font-size: 30px; float: right; margin-right: 28px; margin-bottom: 20px;}
+        .search_box { display: block; width: 90%; height: 50px; background-color: #fff; border: 3px solid #ffc72d; text-indent: 10px; border-radius: 15px; clear: both;}
+        #frm1 input[type="submit"] { position: absolute; top: 63px; right: 50px; width: 30px; height: 30px; background-image: url("./date/img/search_btn.png"); background-size: 30px 30px; overflow: hidden; text-indent: 999px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <input type="checkbox" id="ck1">
+            <div class="hd_wrap">
+                <a href="./index.html" class="logo">
+                    <img src="./date/img/logo.png" alt="노랑풍선 로고">
+                </a>
+                <label for="ck1" class="m_btn">
+                    <i class="xi-bars"></i>
+                    <i class="xi-close"></i>
+                </label>
+            </div>
+            <nav class="gnb_wrap">
+                <img src="./date/img/logo_white.png" alt="노랑풍선 로고(흰색)">
+                <ul class="gnb_lst">
+                    <li class="g_item1"><a href="./index.html#page1">Brand</a></li>
+                    <li class="g_item2"><a href="./index.html#page2">해외여행</a></li>
+                    <li class="g_item3"><a href="./index.html#page3">국내여행</a></li>
+                    <li class="g_item4"><a href="./index.html#page4">News</a></li>
+                </ul>
+                <ul class="bnb_lst">
+                    <li class="b_item1"><a href="./index.html#search"><i class="xi-search"></i></a></li>
+                    <li class="b_item2"><a href="./index.html#login"><i class="xi-user"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="con">
+            <figure class="vs">
+                <ul class="img_box">
+                    <li class="i_item1 on">
+                       <div class="i_tit">
+                            <h1 class="c_white">낮과 밤이<br>모두 아름다운</h1>
+                            <h1 class="c_yellow">싱가포르</h1>
+                            <p>싱가포르 항공 타고 떠나자</p>
+                            <a href="./index.html#page2" class="mor">ViewMore</a>
+                        </div>
+                    </li>
+                    <li class="i_item2">
+                       <div class="i_tit">
+                            <h1 class="c_white">크리스마스 마켓</h1>
+                            <h1 class="c_yellow">in 유럽</h1>
+                            <p>일년에 단 한번이라<br> 더 특별한 유럽</p>
+                            <a href="./index.html#page2" class="mor">ViewMore</a>
+                        </div>
+                    </li>
+                    <li class="i_item3">
+                       <div class="i_tit">
+                            <h1 class="c_white">SHOP GUAM</h1>
+                            <h1 class="c_yellow">FESTIVAL</h1>
+                            <p>신나는 괌의 페스티벌 속으로</p>
+                            <a href="./index.html#page2" class="mor">ViewMore</a>
+                        </div>
+                    </li>
+                    <li class="i_item4">
+                       <div class="i_tit">
+                            <h1 class="c_white">대련을</h1>
+                            <h1 class="c_yellow">가볍게</h1>
+                            <p>다양한 문화&amp;우리의 역사까지</p>
+                            <a href="./index.html#page2" class="mor">ViewMore</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="btn_box">
+                    <li class="bt_item1"><button class="on"></button></li>
+                    <li class="bt_item2"><button></button></li>
+                    <li class="bt_item3"><button></button></li>
+                    <li class="bt_item4"><button></button></li>
+                </ul>
+            </figure>
+            <div id="page1">
+                <h1 class="page_tit">Brand</h1>
+                <img src="./date/img/img1.png" alt="여행을 가볍게 노랑풍선">
+                <div class="vm">
+                <a href="#">View More</a>
+                </div>
+            </div>
+            <div id="page2">
+                <h1 class="page_tit">해외여행</h1>
+                <div class="img1">
+                   <h2 class="img_tit">출발일 임박</h2>
+                    <img src="./date/img/page2_img1.png" alt="출발일 임박">
+                </div>
+                <div class="img2">
+                   <h2 class="img_tit">얼리버드 특가</h2>
+                    <img src="./date/img/page2_img2.png" alt="얼리버드 특가">
+                </div>
+                <div class="vm">
+                    <a href="#">View More</a>
+                </div>
+            </div>
+            <div id="page3">
+                <h1 class="page_tit">국내여행</h1>
+                <div class="img1">
+                   <h2 class="img_tit">버스여행</h2>
+                    <img src="./date/img/page3_img1.png" alt="버스여행">
+                </div>
+                <div class="img2">
+                   <h2 class="img_tit">기차여행</h2>
+                    <img src="./date/img/page3_img2.png" alt="기차여행">
+                </div>
+                <div class="vm">
+                    <a href="#">ViewMore</a>
+                </div>
+            </div>
+            <div id="page4">
+                <h1 class="page_tit">News</h1>
+                <img src="./date/img/page4_img.png" alt="노랑풍선 여행마일리지">
+                <div class="vm">
+                <a href="#">View More</a>
+                </div>
+            </div>
+        </main>
+        <footer id="ft">
+            <p>copyright&copy;park.co.,ltd</p>
+        </footer>
+        <div id="search">
+            <form action="" id="frm1">
+               <span><i class="xi-close"></i></span>
+                <input type="text" class="search_box" placeholder="검색어를 입력해주세요">
+                <input type="submit">
+            </form>
+        </div>
+        <div id="login">
+            <form action="" id="frm2">
+               <span><i class="xi-close"></i></span>
+               <img src="./date/img/logo.png" alt="노랑풍선 로고">
+                <input type="text" class="id_box" placeholder="아이디">
+                <input type="text" class="pw_box" placeholder="비밀번호">
+                <input type="submit" value="로그인">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
