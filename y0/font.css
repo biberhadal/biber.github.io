@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@font-face{
+    font-family : "tire";
+    src : local("NEXEN TIRE_Regular"),
+    url("./font/NEXEN TIRE_Regular.ttf") format("truetype"), url("./font/NEXEN TIRE_Regular.eot") format("embedded-opentype"), url("./font/NEXEN TIRE_Regular.woff") format("woff")
+}
+
+@font-face{
+    font-family : "bom";
+    src : local("HS봄바람체2.0"),
+    url("./font/HS봄바람체2.0.ttf") format("truetype"), url("./font/HS봄바람체2.0.eot") format("embedded-opentype"), url("./font/HS봄바람체2.0.woff") format("woff")
+}
