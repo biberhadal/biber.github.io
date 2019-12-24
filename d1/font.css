@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "dan";
+    src : local("Cafe24Danjunghae"),
+    url("./font/Cafe24Danjunghae.ttf") format("truetype"), url("./font/Cafe24Danjunghae.eot") format("embedded-opentype"), url("./font/Cafe24Danjunghae.woff") format("woff")
+}
+
+@font-face {
+    font-family: "min";
+    src : local("YoonMingukR"),
+    url("./font/YoonMingukR.ttf") format("truetype"), url("./font/YoonMingukR.eot") format("embedded-opentype"), url("./font/YoonMingukR.woff") format("woff")
+}
