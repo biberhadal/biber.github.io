@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "jalnan";
+    src : local("Jalnan"), url("./font/Jalnan.ttf") format("truetype"), url("./font/Jalnan.eot") format("embedded-opentype"), url("./font/Jalnan.woff") format("woff")
+}
+
+@font-face {
+    font-family: "jeju";
+    src : local("JejuGothic"), url("./font/JejuGothic.ttf") format("truetype"), url("./font/JejuGothic.eot") format("embedded-opentype"), url("./font/JejuGothic.woff") format("woff")
+}
