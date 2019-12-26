@@ -2,7 +2,7 @@
 
 @font-face {
     font-family : "black";
-    src:local("BlackHanSans-Regular"), url("./font/BlackHanSans-Regular.ttf") format("truetype"), url("./font/BlackHanSans-Regular.eot") format("embedded-opentype"), url("./font/BlackHanSans-Regular.woff") format("woff")
+    src:local("SCDream7"), url("./font/SCDream7.otf") format("opentype"), url("./font/SCDream7.eot") format("embedded-opentype"), url("./font/SCDream7.woff") format("woff")
 }
 
 @font-face {
