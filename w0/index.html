@@ -66,10 +66,15 @@
                 intv = setInterval(function(){nextAni();},2900); 
             });
             $(".btn .rt_btn").click(function(){
-                $(".intro_box").not(":animated").animate({"margin-left":"-96%"},500);
+                    $(".intro_box").not(":animated").animate({"margin-left":"-50%"},500,function(){
+                        $(".intro_box li").eq(0).appendTo(".intro_box");
+                        $(".intro_box").css("margin-left","0");
+                    });
             });
             $(".btn .lt_btn").click(function(){
-                $(".intro_box").not(":animated").animate({"margin-left":"0%"},500);
+                $(".intro_box li").eq(4).prependTo(".intro_box");
+                $(".intro_box").css("margin-left","-50%");
+                $(".intro_box").not(":animated").animate({"margin-left":"0"},500);
             });
         });
     </script>
