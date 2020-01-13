@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "netma";
+    src : local("netmarbleB"), url("./font/netmarbleB.ttf") format("truetype"), url("./font/netmarbleB.eot") format("embeded-opentype"), url("./font/netmarbleB.woff") format("woff")
+}
+
+@font-face {
+    font-family: "hell";
+    src : local("헬스셋고딕Light"), url("./font/헬스셋고딕Light.ttf") format("truetype"), url("./font/헬스셋고딕Light.eot") format("embeded-opentype"), url("./font/헬스셋고딕Light.woff") format("woff")
+}
