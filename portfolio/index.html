@@ -44,8 +44,17 @@
                 });
             }
             var intv = setInterval(function(){Ani()},2900);
+            var offset = $("#page2").offset();
+            var offset2 = $("#page3").offset();
+            var offset3 = $("#page4").offset();
             $(".gnb1").click(function(){
-                $("#page2").slideUp
+                $("html").animate({scrollTop : offset.top+"px"},800);
+            });
+            $(".gnb2").click(function(){
+                $("html").animate({scrollTop : offset2.top+"px"},800);
+            });
+            $(".gnb3").click(function(){
+                $("html").animate({scrollTop : offset3.top+"px"},800);
             });
         });
     </script>
@@ -103,10 +112,10 @@
 
      /* header */
         #hd { background-color: #fff; position: absolute; top: 0; right: 0; height: 100vh; transition: 0.5s; width: 0; overflow: hidden; z-index: 10;}
-        .gnb li { margin-top: 30px; position: relative; z-index: 9;}
-        .gnb li::before { content: ""; width: 0%; height: 20px; position: absolute; background-color: #99ce66; opacity: 0.6; left: -5%; top: 30%; z-index: 8; transition: 0.5s; cursor: pointer;}
-        .gnb li:hover::before { width: 110%;}
-        .gnb a { font-family: "netma"; color: black; font-size: 3em; display: block; text-align: center; word-spacing: 5px;}
+        .gnb li { position: relative; margin-top: 15%;}
+        .gnb li::before { content: ""; width: 0%; height: 20px; position: absolute; background-color: #99ce66; opacity: 0.6; left: -5%; top: 30%; transition: 0.5s; cursor: pointer;}
+        .gnb li:hover::before { width: 110%; z-index: -1;}
+        .gnb a { font-family: "netma"; color: black; font-size: 3em; display: block; word-spacing: 5px; text-align: center;}
      /* main */
         #con { width: 100%;}
         .tit { display: block; font-size: 2.3em; font-family: "netma"; position: absolute; text-align: center; transition: 1s; cursor: pointer; z-index: 11; text-shadow: 3px 3px 3px #99ce66;}
@@ -136,9 +145,8 @@
         #page2, #page3, #page4 {  background: repeating-linear-gradient(-45deg, #eee, #eee 1px, #99ce66 0, #99ce66 20px);}
         .cha_box { position: absolute;}
         .background { background-color: #fff; width: 80%; height: 80%; margin: 5% auto; box-shadow: 2px 2px 5px #333;}
-        .intro { width: 45%; background-color: aqua; height: 100%; float: left;}
-        .work { width: 45%; float: right; background-color: blueviolet; height: 100%;}
-     /* footer */
+        .intro { width: 45%; height: 100%; position: relative;}
+        .work { width: 45%; height: 100%;}
 
      /* mediaquery */
      @media screen and (max-width: 767px){
@@ -158,7 +166,9 @@
         .img_box li { width: 16.7%; float: left; overflow: hidden;}
         .img_box img { height: 100vh;}
         #vs2, #vs3, #vs4 { display: none;}
-        /* footer */
+        /* page2 */
+        
+
      }
      @media screen and (min-width: 768px) and (max-width: 1024px){
          /* 태블릿♧ */
@@ -184,7 +194,7 @@
      @media screen and (min-width: 1025px){
          /* 데스크탑◈ */
         #ce:checked ~ #hd { width: 50%;}
-        #ce:checked ~ #con .tit { color: #99ce66; background-color: #fff; transform: scale(1.8); text-shadow: none;}
+        #ce:checked ~ #con .tit { color: #99ce66; background-color: #fff; transform: scale(1.5); text-shadow: none;}
         #ce:checked ~ #con .tit::before { display: none;}
         #ce:checked ~ #con .tit::after { display: none;}
         #ce:checked ~ #con .vs { opacity: 1;}
@@ -195,7 +205,7 @@
 
          /* main */
         .tit { top: 50%; left: 43%; width: 13%; }
-        .tit:hover { color: #99ce66; transform: scale(1.8); background-color: #fff; box-shadow: 5px 0px 10px #333;
+        .tit:hover { color: #99ce66; transform: scale(1.3); background-color: #fff; box-shadow: 5px 0px 10px #333;
         text-shadow: none;}
         .tit:hover::before { display: none;}
         .tit:hover::after { display: none;}
@@ -209,7 +219,40 @@
         #vs2 img { left: -100%;}
         #vs3 img { left: -200%;}
         #vs4 img { left: -300%;}
-         /* footer */
+
+        /* page2 */
+        .intro { float: left;}
+        .work { float: right;}
+        .intro::after { content: ""; display: block; width: 5px; height: 90%; background-color: #99ce66; position: absolute; top: 5%; left: 111%; border-radius: 10px;}
+        .myimg { margin-top: 10%; margin-left: 10%; margin-right: 5%; float: left;}
+        .intro_box { margin-top: 25%;}
+        .intro_box li { position: relative; width: 80%; margin-left: 10%;}
+        .name, .age { font-size: 20px;}
+        .age { margin-top: 10px;}
+        .name::before, .age::before { content: ""; display: block; width: 2px; height: 15px; position: absolute; background-color: #99ce66; left: 32%; top: 6px;}
+        .personality { margin-top: 50px;}
+        .introduce { margin-top: 20px;}
+        .personality, .introduce {width: 100%; text-align: left;}
+        .intro_box img { width: 30%; display: block; position: absolute; top: 10px; left: 0;}
+        .con { width: 65%; margin-left: 35%; font-size: 14px;}
+        .career .bar { width: 70%; height: 20px; background-color: #ddd; border-radius: 10px; float: right; margin-top: 40px;}
+        .career { margin-top: 8%;}
+        .cir { width: 80px; height: 80px; background-color: #fff; border-radius: 60px; position: absolute; border-style: solid; border-width: 10px; border-color: #99ce66 #99ce66 #539c0c #539c0c; text-align: center;font-weight: bold;}
+        #c1 { right: 60%;}
+        #c2 { right: 30%;}
+        #c3 { right: 0;}
+        .date { font-size: 13px; margin-top: 19px;}
+        .cir_con { font-size: 10px; display: block; margin-top: 3px;}
+        .work_box { margin-top: 13%; margin-left: 10%; width: 80%;}
+        .work_box li { width: 100%; height: 80px; margin-top: 8%; clear: both;}
+        .work .circle { width: 70px; height: 70px; border-radius: 80px; background-color: #fff; text-align: center;font-size: 11px; line-height: 70px; border-width: 10px; border-style: solid; border-color: #99ce66 #99ce66 #539c0c #539c0c; float: left;}
+        .work .bar { width: 78%; height: 30px; background-color: #ddd; border-radius: 20px; float: right; margin-top: 30px; overflow: hidden;}
+        .work .bar::before { content: ""; display: block; background-color: #99ce66; height: 30px;}
+        #ba1::before { width: 80%;}
+        #ba2::before { width: 75%;}
+        #ba3::before { width: 65%;}
+        #ba4::before { width: 90%;}
+        #ba5::before { width: 85%;}
      }
 
      @media screen and (max-width: 767px) and (min-height: 812px){
@@ -370,40 +413,62 @@
                 </ul>
                 <div id="aboutme" class="background">
                     <aside class="intro">
-                        <img src="./data/IMG_0569.jpg" alt="면접사진">
+                        <img src="./data/IMG_0569.jpg" alt="면접사진" class="myimg">
                         <ul class="intro_box">
-                            <li class="name">박슬기</li>
-                            <li class="age">23</li>
-                            <li class="personality"></li>
-                            <li class="introduce"></li>
-                            <li class="career"></li>
+                            <li class="name">Name : 박슬기</li>
+                            <li class="age">Age : 23</li>
+                            <li class="personality">
+                                <img src="./data/memo.jpg" alt="성실">
+                                <div class="con">
+                                    <h3>“메모하는 습관”</h3>
+                                    <p> 이른 사회생활을 하게 되어서 실수가 잦았을 때 바로바로 고칠 때에 메모하는 습관이 많은 도움이 되었습니다. 그 결과 같이 일하시는 분들께서 바로바로 실수나 개선해서 좋다고 말씀하실 정도로 실수가 많이 줄고, 꼼꼼하게 업무 할 수 있게 되었습니다.</p>
+                                </div>
+                            </li>
+                            <li class="introduce">
+                                <img src="./data/pine.jpg" alt="소나무">
+                                <div class="con">
+                                    <h3>“소나무 같은 사람.”</h3>
+                                    <p>사시사철 푸른 소나무처럼 변하지 않고 노력하는 사람이 되겠습니다. 소나무는 자신의 자리를 지키며, 변하지 않고 묵묵히 자신의 일을 해냅니다. 저도 소나무처럼 맡겨진 일에 변하지 않고 열심히 하는 사람이 되고 싶습니다. 또 꼼꼼함과 저의 장점인 성실함을 가지고 노력하여 이 회사에서 부족한 것을 채우고 발전하고 싶습니다.</p>
+                                </div>
+                            </li>
+                            <li class="career">
+                                <div class="bar"></div>
+                                <div class="cir" id="c1">
+                                    <p class="date">2011~2014</p>
+                                    <p class="cir_con">대전둔산중학교</p>
+                                </div>
+                                <div class="cir" id="c2">
+                                    <p class="date">2014~2017</p>
+                                    <p class="cir_con">대전대성여자고등학교</p>
+                                </div>
+                                <div class="cir" id="c3">
+                                    <p class="date">2016~2019</p>
+                                    <p class="cir_con">개업상사</p>
+                                </div>
+                            </li>
                         </ul>
                     </aside>
                     <aside class="work">
-                        <ul>
+                        <ul class="work_box">
                             <li>
                                 <div class="circle">HTML5</div>
-                                <div class="bar"></div>
+                                <div class="bar" id="ba1"></div>
                             </li>
                             <li>
                                 <div class="circle">CSS</div>
-                                <div class="bar"></div>
+                                <div class="bar" id="ba2"></div>
                             </li>
                             <li>
-                                <div class="circle">JAVASCRIPT&amp;JQUERY</div>
-                                <div class="bar"></div>
+                                <div class="circle">JQUERY</div>
+                                <div class="bar" id="ba3"></div>
                             </li>
                             <li>
                                 <div class="circle">PHOTOSHOP</div>
-                                <div class="bar"></div>
+                                <div class="bar" id="ba4"></div>
                             </li>
                             <li>
                                 <div class="circle">ILLUSTRATOR</div>
-                                <div class="bar"></div>
-                            </li>
-                            <li>
-                                <div class="circle">PHP</div>
-                                <div class="bar"></div>
+                                <div class="bar" id="ba5"></div>
                             </li>
                         </ul>
                     </aside>
@@ -437,9 +502,6 @@
                 </div>
             </div>
         </main>
-        <footer id="ft">
-            <p class="copyright">Copyrightⓒ park seul_gi. All rights reserved.</p>
-        </footer>
     </div>
 </body>
 </html>
