@@ -23,6 +23,32 @@
         });
     </script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            function Ani(){
+                $("#vs1 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs1 .img_box li").eq(0).appendTo("#vs1 .img_box");
+                    $("#vs1 .img_box").css("margin-left","0");
+                });
+                $("#vs2 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs2 .img_box li").eq(0).appendTo("#vs2 .img_box");
+                    $("#vs2 .img_box").css("margin-left","0");
+                });
+                $("#vs3 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs3 .img_box li").eq(0).appendTo("#vs3 .img_box");
+                    $("#vs3 .img_box").css("margin-left","0");
+                });
+                $("#vs4 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs4 .img_box li").eq(0).appendTo("#vs4 .img_box");
+                    $("#vs4 .img_box").css("margin-left","0");
+                });
+            }
+            var intv = setInterval(function(){Ani()},2900);
+            $(".gnb1").click(function(){
+                $("#page2").slideUp
+            });
+        });
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script> 
       function initialize() { 
@@ -45,29 +71,47 @@
 
       }
  </script>
+ <script>
+    $(document).ready(function(){
+        var win_h = $(window).height();
+        $('.page').each(function(index){
+            $(this).attr("data-index",win_h * index);
+        });
+        $('.page').on("mousewheel DOMMouseScroll",function(e){
+            var sectionPos = parseInt($(this).attr("data-index"));
+            if(e.originalEvent.wheelDelta >= 0) {
+                $("html,body").stop().animate({scrollTop:sectionPos - win_h},800);
+            return false;
+            } else if (e.originalEvent.wheelDelta < 0) {
+                $("html,body").stop().animate({scrollTop:sectionPos + win_h},800);
+            return false; 
+            }
+        });
+    });    
+</script>
  <link rel="shortcut icon" href="./data/favicon.png" type="image/png">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
  <link rel="stylesheet" href="./font.css">
  <style>
      * { margin: 0; padding: 0;}
      body,html { width: 100%; height: 100%; font-family: "hell";}
+     body::-webkit-scrollbar { display: none;}
      ul { list-style: none;}
      a { text-decoration: none;}
      .wrap { width: 100%; overflow: hidden;}
      #ce { display: none;}
 
      /* header */
-        #hd { background-color: #fff; position: absolute; top: 0; right: 0; height: 100vh; transition: 0.5s; width: 0; overflow: hidden;}
+        #hd { background-color: #fff; position: absolute; top: 0; right: 0; height: 100vh; transition: 0.5s; width: 0; overflow: hidden; z-index: 10;}
         .gnb li { margin-top: 30px; position: relative; z-index: 9;}
         .gnb li::before { content: ""; width: 0%; height: 20px; position: absolute; background-color: #99ce66; opacity: 0.6; left: -5%; top: 30%; z-index: 8; transition: 0.5s; cursor: pointer;}
         .gnb li:hover::before { width: 110%;}
         .gnb a { font-family: "netma"; color: black; font-size: 3em; display: block; text-align: center; word-spacing: 5px;}
      /* main */
         #con { width: 100%;}
-        .tit { display: block; font-size: 2.3em; font-family: "netma"; position: absolute; text-align: center; transition: 1s; cursor: pointer;}
-        .tit::before {content: "≪"; display: block; position: absolute; top: 45px; left: 45%; transform: rotate(90deg); font-size: 25px; color: #99ce66; animation: 1s ani1 ease infinite;}
-        .tit::after {content: "Click ME!"; font-family: "hell"; display: block; position: absolute; top: 70px; left: 28%; font-size: 25px; color: #99ce66; animation: 1s ani2 ease infinite;}
-
+        .tit { display: block; font-size: 2.3em; font-family: "netma"; position: absolute; text-align: center; transition: 1s; cursor: pointer; z-index: 11; text-shadow: 3px 3px 3px #99ce66;}
+        .tit::before {content: "≪"; display: block; position: absolute; top: 45px; left: 45%; transform: rotate(90deg); font-size: 25px; color: #99ce66; animation: 1s ani1 ease infinite; text-shadow: 1px 1px 1px #333;}
+        .tit::after {content: "Click ME!"; font-family: "hell"; display: block; position: absolute; top: 70px; left: 28%; font-size: 25px; color: #99ce66; animation: 1s ani2 ease infinite; text-shadow: 1px 1px 1px #333;}
         /* main animation */
         @keyframes ani1 {
             from { top: 45px;}
@@ -80,6 +124,20 @@
             50% { top: 90px;}
             to { top: 70px;}
         }
+
+        /* page */
+        .page { width: 100%; height: 100vh; overflow: hidden;}
+
+        /* page1 */
+        .img_box li { position: relative;}
+        .work_tit { position: absolute; z-index: 9; bottom: 20px; right: 10px; font-family: "netma"; font-size: 1.5em; color: #333; text-shadow: 2px 2px 3px #99ce66;}
+
+        /* page2 */
+        #page2, #page3, #page4 {  background: repeating-linear-gradient(-45deg, #eee, #eee 1px, #99ce66 0, #99ce66 20px);}
+        .cha_box { position: absolute;}
+        .background { background-color: #fff; width: 80%; height: 80%; margin: 5% auto; box-shadow: 2px 2px 5px #333;}
+        .intro { width: 45%; background-color: aqua; height: 100%; float: left;}
+        .work { width: 45%; float: right; background-color: blueviolet; height: 100%;}
      /* footer */
 
      /* mediaquery */
@@ -89,11 +147,17 @@
          #ce:checked ~ #con .tit { display: none;}
 
          /* header */
-         .gnb { margin-top: 40%;}
-         .gnb li::before { width: 75%; left: 13%;}
+         .gnb { margin-top: 45%;}
+         .gnb li::before { width: 75%; left: 13%; opacity: 0.2;}
+         .xi-close { display: block; position: absolute; top: 10%; right: 10%; font-size: 2em;}
 
         /* main */
         .tit { top: 45%; left: 20%;}
+        #vs1 { width: 100%; overflow: hidden;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; float: left; overflow: hidden;}
+        .img_box img { height: 100vh;}
+        #vs2, #vs3, #vs4 { display: none;}
         /* footer */
      }
      @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -102,32 +166,49 @@
          #ce:checked ~ #con .tit { display: none;}
 
          /* header */
-         .gnb { margin-top: 40%;}
+         .gnb { margin-top: 33%;}
          .gnb li { margin-top: 50px;}
+         .gnb li::before { width: 60%; height: 30%; left: 20%; opacity: 0.2;}
          .gnb a { font-size: 5.5em;}
+         .xi-close { display: block; font-size: 3em; position: absolute; top: 10%; right: 10%;}
 
          /* main */
-
+        .tit { font-size: 3.5em; top: 45%; left: 30%;}
+        #vs1  { width: 100%; overflow: hidden;;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; float: left; overflow: hidden;}
+        .img_box img { height: 100vh;}
+        #vs2, #vs3, #vs4 { display: none;}
          /* footer */
      }
      @media screen and (min-width: 1025px){
          /* 데스크탑◈ */
         #ce:checked ~ #hd { width: 50%;}
-        #ce:checked ~ #con .tit { color: #99ce66; background-color: #fff; transform: scale(1.8);}
+        #ce:checked ~ #con .tit { color: #99ce66; background-color: #fff; transform: scale(1.8); text-shadow: none;}
         #ce:checked ~ #con .tit::before { display: none;}
         #ce:checked ~ #con .tit::after { display: none;}
+        #ce:checked ~ #con .vs { opacity: 1;}
          
          /* header */
-        #hd {box-shadow: 10px 10px 20px #333;}
+        #hd { overflow: hidden; box-shadow: 0px -10px 10px #333;}
         .gnb { width: 25%; margin: 40% auto;}
-        .tit:hover { color: #99ce66; transform: scale(1.8);}
-        .tit:hover::before { display: none;}
-        .tit:hover::after { display: none;}
 
          /* main */
         .tit { top: 50%; left: 43%; width: 13%; }
+        .tit:hover { color: #99ce66; transform: scale(1.8); background-color: #fff; box-shadow: 5px 0px 10px #333;
+        text-shadow: none;}
+        .tit:hover::before { display: none;}
+        .tit:hover::after { display: none;}
         .xi-close { display: none;}
-
+        
+        /* page1 */
+        .vs { width: 25%; height: 100vh; overflow: hidden; float: left; opacity: 0.7;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; height: 100vh; float: left; position: relative; overflow: hidden;}
+        .img_box img { width: 100vw; position: absolute;}
+        #vs2 img { left: -100%;}
+        #vs3 img { left: -200%;}
+        #vs4 img { left: -300%;}
          /* footer */
      }
 
@@ -144,24 +225,141 @@
             <nav class="gnb">
                 <label for="ce"><i class="xi-close"></i></label>    
                 <ul>
-                    <li><a href="#page2">About Me</a></li>
-                    <li><a href="#page3">Portfolio</a></li>
-                    <li><a href="#page4">Contact</a></li>
+                    <li><a href="./index.html#page2" class="gnb1">About Me</a></li>
+                    <li><a href="./index.html#page3" class="gnb2">Portfolio</a></li>
+                    <li><a href="./index.html#page4" class="gnb3">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main id="con">
             <div class="page" id="page1">
                 <label for="ce" class="tit">Park Seul Gi</label>
-                <figure class="vs">
+                <figure class="vs" id="vs1">
                     <ul class="img_box">
-                        <li><img src="./data/rhino.jpg" alt="rhino"></li>
-                        <li><img src="./data/3dmax.jpg" alt="3dmax"></li>
-                        <li><img src="./data/html.JPG" alt="html"></li>
-                        <li><img src="./data/css.JPG" alt="css"></li>
-                        <li><img src="./data/ai.JPG" alt="ai"></li>
-                        <li><img src="./data/psd.JPG" alt="psd"></li>
-                        <li><img src="./data/jquery.JPG" alt="javascript&jquery"></li>
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs2">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs3">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs4">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
                     </ul>
                 </figure>
             </div>
@@ -170,7 +368,7 @@
                     <li class="body"><img src="" alt="캐릭터 몸"></li>
                     <li class="arm"><img src="" alt="캐릭터 팔"></li>
                 </ul>
-                <div class="profile" id="background">
+                <div id="aboutme" class="background">
                     <aside class="intro">
                         <img src="./data/IMG_0569.jpg" alt="면접사진">
                         <ul class="intro_box">
@@ -212,7 +410,7 @@
                 </div>
             </div>
             <div class="page" id="page3">
-                <div class="portfolio" id="background">
+                <div id="portfolio" class="background">
                     <ul class="desktop">
                         <h4 class="portfol_tit">Desktop</h4>
                         <li><a href="#"><img src="https://placehold.it/600x400/222" alt="데스크탑1"></a></li>
@@ -233,7 +431,7 @@
                 </div>
             </div>
             <div class="page" id="page4">
-                <div class="map">
+                <div id="map" class="background">
                     <div id="map_canvas"style="width:600px; height:400px;"></div>
                     <p class="phone_num">010-2367-6138</p>
                 </div>
