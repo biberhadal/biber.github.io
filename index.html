@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박슬기_포트폴리오</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="백제의 문화가 살아있는 곳, 부여">
+    <meta name="description" content="백제의 문화가 살아있는 곳, 부여">
+    <!--  화면 사이즈 변환하는 태그(모바일 태그 입력 시 꼭 필요)-->
+    <!--  모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
+    <!--  안드로이드-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--  ios-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--   자바스크립트로 모바일 웹 주소창 숨기기-->
+    <script>
+        window.addEventListener('load',function(){
+            //body의 height를 살짝 늘리는 코드
+            document.body.style.height = 
+            (document.documentElement.clientHeight+5)+'px';
+            //scroll를 제어하는 코드
+            setTimeout(function(){window.scrollTo(0,1);},100);
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            function Ani(){
+                $("#vs1 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs1 .img_box li").eq(0).appendTo("#vs1 .img_box");
+                    $("#vs1 .img_box").css("margin-left","0");
+                });
+                $("#vs2 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs2 .img_box li").eq(0).appendTo("#vs2 .img_box");
+                    $("#vs2 .img_box").css("margin-left","0");
+                });
+                $("#vs3 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs3 .img_box li").eq(0).appendTo("#vs3 .img_box");
+                    $("#vs3 .img_box").css("margin-left","0");
+                });
+                $("#vs4 .img_box").not(":animated").animate({"margin-left":"-100%"},500,function(){
+                    $("#vs4 .img_box li").eq(0).appendTo("#vs4 .img_box");
+                    $("#vs4 .img_box").css("margin-left","0");
+                });
+            }
+            var intv = setInterval(function(){Ani()},2900);
+            var offset = $("#page2").offset();
+            var offset2 = $("#page3").offset();
+            var offset3 = $("#page4").offset();
+            $(".gnb1").click(function(){
+                $("html").animate({scrollTop : offset.top+"px"},800);
+            });
+            $(".gnb2").click(function(){
+                $("html").animate({scrollTop : offset2.top+"px"},800);
+            });
+            $(".gnb3").click(function(){
+                $("html").animate({scrollTop : offset3.top+"px"},800);
+            });
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script> 
+      function initialize() { 
+
+      var myLatlng = new google.maps.LatLng(36.354450,127.368158); // 위도 경도 찾기
+
+      var mapOptions = { 
+
+            zoom: 17, 
+
+            center: myLatlng, 
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+
+      } 
+
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+      var marker = new google.maps.Marker({ position: myLatlng, map: map, title: 'HOME'}); // 지도에 네비게이션 모양 설정
+
+      }
+ </script>
+ <script>
+    $(document).ready(function(){
+        var win_h = $(window).height();
+        $('.page').each(function(index){
+            $(this).attr("data-index",win_h * index);
+        });
+        $('.page').on("mousewheel DOMMouseScroll",function(e){
+            var sectionPos = parseInt($(this).attr("data-index"));
+            if(e.originalEvent.wheelDelta >= 0) {
+                $("html,body").stop().animate({scrollTop:sectionPos - win_h},800);
+            return false;
+            } else if (e.originalEvent.wheelDelta < 0) {
+                $("html,body").stop().animate({scrollTop:sectionPos + win_h},800);
+            return false; 
+            }
+        });
+    });    
+</script>
+ <link rel="shortcut icon" href="./data/favicon.png" type="image/png">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+ <link rel="stylesheet" href="./font.css">
+ <style>
+     * { margin: 0; padding: 0;}
+     body,html { width: 100%; height: 100%; font-family: "hell";}
+     body::-webkit-scrollbar { display: none;}
+     ul { list-style: none;}
+     a { text-decoration: none;}
+     .wrap { width: 100%; overflow: hidden;}
+     #ce { display: none;}
+
+     /* header */
+        #hd { background-color: #fff; position: absolute; top: 0; right: 0; height: 100vh; transition: 0.5s; width: 0; overflow: hidden; z-index: 10;}
+        .gnb li { position: relative; margin-top: 15%;}
+        .gnb li::before { content: ""; width: 0%; height: 20px; position: absolute; background-color: #99ce66; opacity: 0.6; left: -5%; top: 30%; transition: 0.5s; cursor: pointer;}
+        .gnb li:hover::before { width: 110%; z-index: -1;}
+        .gnb a { font-family: "netma"; color: black; font-size: 3em; display: block; word-spacing: 5px; text-align: center;}
+     /* main */
+        #con { width: 100%;}
+        .tit { display: block; font-size: 2.3em; font-family: "netma"; position: absolute; text-align: center; transition: 1s; cursor: pointer; z-index: 11; text-shadow: 3px 3px 3px #99ce66;}
+        .tit::before {content: "≪"; display: block; position: absolute; top: 45px; left: 45%; transform: rotate(90deg); font-size: 25px; color: #99ce66; animation: 1s ani1 ease infinite; text-shadow: 1px 1px 1px #333;}
+        .tit::after {content: "Click ME!"; font-family: "hell"; display: block; position: absolute; top: 70px; left: 28%; font-size: 25px; color: #99ce66; animation: 1s ani2 ease infinite; text-shadow: 1px 1px 1px #333;}
+        /* main animation */
+        @keyframes ani1 {
+            from { top: 45px;}
+            50% { top: 60px;}
+            to { top: 45px;}
+        }
+        
+        @keyframes ani2 {
+            from { top: 70px;}
+            50% { top: 90px;}
+            to { top: 70px;}
+        }
+
+        /* page */
+        .page { width: 100%; height: 100vh; overflow: hidden;}
+
+        /* page1 */
+        .img_box li { position: relative;}
+        .work_tit { position: absolute; z-index: 9; bottom: 20px; right: 10px; font-family: "netma"; font-size: 1.5em; color: #333; text-shadow: 2px 2px 3px #99ce66;}
+
+        /* page2 */
+        #page2, #page3, #page4 {  background: repeating-linear-gradient(-45deg, #eee, #eee 1px, #99ce66 0, #99ce66 20px);}
+        .cha_box { position: absolute;}
+        .background { background-color: #fff; width: 80%; height: 80%; margin: 5% auto; box-shadow: 2px 2px 5px #333;}
+        .intro { width: 45%; height: 100%; position: relative;}
+        .work { width: 45%; height: 100%;}
+
+     /* mediaquery */
+     @media screen and (max-width: 767px){
+         /* media는 moblie 먼저~♣ */
+         #ce:checked ~ #hd { width: 100%;}
+         #ce:checked ~ #con .tit { display: none;}
+
+         /* header */
+         .gnb { margin-top: 45%;}
+         .gnb li::before { width: 75%; left: 13%; opacity: 0.2;}
+         .xi-close { display: block; position: absolute; top: 10%; right: 10%; font-size: 2em;}
+
+        /* main */
+        .tit { top: 45%; left: 20%;}
+        #vs1 { width: 100%; overflow: hidden;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; float: left; overflow: hidden;}
+        .img_box img { height: 100vh;}
+        #vs2, #vs3, #vs4 { display: none;}
+        /* page2 */
+        
+
+     }
+     @media screen and (min-width: 768px) and (max-width: 1024px){
+         /* 태블릿♧ */
+         #ce:checked ~ #hd { width: 100%;}
+         #ce:checked ~ #con .tit { display: none;}
+
+         /* header */
+         .gnb { margin-top: 33%;}
+         .gnb li { margin-top: 50px;}
+         .gnb li::before { width: 60%; height: 30%; left: 20%; opacity: 0.2;}
+         .gnb a { font-size: 5.5em;}
+         .xi-close { display: block; font-size: 3em; position: absolute; top: 10%; right: 10%;}
+
+         /* main */
+        .tit { font-size: 3.5em; top: 45%; left: 30%;}
+        #vs1  { width: 100%; overflow: hidden;;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; float: left; overflow: hidden;}
+        .img_box img { height: 100vh;}
+        #vs2, #vs3, #vs4 { display: none;}
+         /* footer */
+     }
+     @media screen and (min-width: 1025px){
+         /* 데스크탑◈ */
+        #ce:checked ~ #hd { width: 50%;}
+        #ce:checked ~ #con .tit { color: #99ce66; background-color: #fff; transform: scale(1.5); text-shadow: none;}
+        #ce:checked ~ #con .tit::before { display: none;}
+        #ce:checked ~ #con .tit::after { display: none;}
+        #ce:checked ~ #con .vs { opacity: 1;}
+         
+         /* header */
+        #hd { overflow: hidden; box-shadow: 0px -10px 10px #333;}
+        .gnb { width: 25%; margin: 40% auto;}
+
+         /* main */
+        .tit { top: 50%; left: 43%; width: 13%; }
+        .tit:hover { color: #99ce66; transform: scale(1.3); background-color: #fff; box-shadow: 5px 0px 10px #333;
+        text-shadow: none;}
+        .tit:hover::before { display: none;}
+        .tit:hover::after { display: none;}
+        .xi-close { display: none;}
+        
+        /* page1 */
+        .vs { width: 25%; height: 100vh; overflow: hidden; float: left; opacity: 0.7;}
+        .img_box { width: 600%;}
+        .img_box li { width: 16.7%; height: 100vh; float: left; position: relative; overflow: hidden;}
+        .img_box img { width: 100vw; position: absolute;}
+        #vs2 img { left: -100%;}
+        #vs3 img { left: -200%;}
+        #vs4 img { left: -300%;}
+
+        /* page2 */
+        .intro { float: left;}
+        .work { float: right;}
+        .intro::after { content: ""; display: block; width: 5px; height: 90%; background-color: #99ce66; position: absolute; top: 5%; left: 111%; border-radius: 10px;}
+        .myimg { margin-top: 10%; margin-left: 10%; margin-right: 5%; float: left;}
+        .intro_box { margin-top: 25%;}
+        .intro_box li { position: relative; width: 80%; margin-left: 10%;}
+        .name, .age { font-size: 20px;}
+        .age { margin-top: 10px;}
+        .name::before, .age::before { content: ""; display: block; width: 2px; height: 15px; position: absolute; background-color: #99ce66; left: 32%; top: 6px;}
+        .personality { margin-top: 50px;}
+        .introduce { margin-top: 20px;}
+        .personality, .introduce {width: 100%; text-align: left;}
+        .intro_box img { width: 30%; display: block; position: absolute; top: 10px; left: 0;}
+        .con { width: 65%; margin-left: 35%; font-size: 14px;}
+        .career .bar { width: 70%; height: 20px; background-color: #ddd; border-radius: 10px; float: right; margin-top: 40px;}
+        .career { margin-top: 8%;}
+        .cir { width: 80px; height: 80px; background-color: #fff; border-radius: 60px; position: absolute; border-style: solid; border-width: 10px; border-color: #99ce66 #99ce66 #539c0c #539c0c; text-align: center;font-weight: bold;}
+        #c1 { right: 60%;}
+        #c2 { right: 30%;}
+        #c3 { right: 0;}
+        .date { font-size: 13px; margin-top: 19px;}
+        .cir_con { font-size: 10px; display: block; margin-top: 3px;}
+        .work_box { margin-top: 13%; margin-left: 10%; width: 80%;}
+        .work_box li { width: 100%; height: 80px; margin-top: 8%; clear: both;}
+        .work .circle { width: 70px; height: 70px; border-radius: 80px; background-color: #fff; text-align: center;font-size: 11px; line-height: 70px; border-width: 10px; border-style: solid; border-color: #99ce66 #99ce66 #539c0c #539c0c; float: left;}
+        .work .bar { width: 78%; height: 30px; background-color: #ddd; border-radius: 20px; float: right; margin-top: 30px; overflow: hidden;}
+        .work .bar::before { content: ""; display: block; background-color: #99ce66; height: 30px;}
+        #ba1::before { width: 80%;}
+        #ba2::before { width: 75%;}
+        #ba3::before { width: 65%;}
+        #ba4::before { width: 90%;}
+        #ba5::before { width: 85%;}
+     }
+
+     @media screen and (max-width: 767px) and (min-height: 812px){
+         /* iphoneX */
+         .gnb { margin-top: 65%;}
+     }
+ </style>
+</head>
+<body onload="initialize()">
+    <div class="wrap">
+        <input type="checkbox" name="ch" id="ce">
+        <header id="hd">
+            <nav class="gnb">
+                <label for="ce"><i class="xi-close"></i></label>    
+                <ul>
+                    <li><a href="./index.html#page2" class="gnb1">About Me</a></li>
+                    <li><a href="./index.html#page3" class="gnb2">Portfolio</a></li>
+                    <li><a href="./index.html#page4" class="gnb3">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="con">
+            <div class="page" id="page1">
+                <label for="ce" class="tit">Park Seul Gi</label>
+                <figure class="vs" id="vs1">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs2">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs3">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+                <figure class="vs" id="vs4">
+                    <ul class="img_box">
+                        <li class="rhino">
+                            
+                            <img src="./data/rhino.jpg" alt="라이노">
+                        </li>
+                        <li class="3dmax">
+                            
+                            <img src="./data/3dmax.jpg" alt="3d 맥스">
+                        </li>
+                        <li class="html">
+                            
+                            <img src="./data/html.JPG" alt="html">
+                        </li>
+                        <li class="css">
+                            
+                            <img src="./data/css.jpg" alt="css">
+                        </li>
+                        <li class="jquery">
+                            
+                            <img src="./data/jquery.JPG" alt="jquery">
+                        </li>
+                        <li class="psd">
+                            
+                            <img src="./data/psd.JPG" alt="psd">
+                        </li>
+                        <li class="ai">
+                            
+                            <img src="./data/ai.JPG" alt="ai">
+                        </li>
+                    </ul>
+                </figure>
+            </div>
+            <div class="page" id="page2">
+                <ul class="cha_box">
+                    <li class="body"><img src="" alt="캐릭터 몸"></li>
+                    <li class="arm"><img src="" alt="캐릭터 팔"></li>
+                </ul>
+                <div id="aboutme" class="background">
+                    <aside class="intro">
+                        <img src="./data/IMG_0569.jpg" alt="면접사진" class="myimg">
+                        <ul class="intro_box">
+                            <li class="name">Name : 박슬기</li>
+                            <li class="age">Age : 23</li>
+                            <li class="personality">
+                                <img src="./data/memo.jpg" alt="성실">
+                                <div class="con">
+                                    <h3>“메모하는 습관”</h3>
+                                    <p> 이른 사회생활을 하게 되어서 실수가 잦았을 때 바로바로 고칠 때에 메모하는 습관이 많은 도움이 되었습니다. 그 결과 같이 일하시는 분들께서 바로바로 실수나 개선해서 좋다고 말씀하실 정도로 실수가 많이 줄고, 꼼꼼하게 업무 할 수 있게 되었습니다.</p>
+                                </div>
+                            </li>
+                            <li class="introduce">
+                                <img src="./data/pine.jpg" alt="소나무">
+                                <div class="con">
+                                    <h3>“소나무 같은 사람.”</h3>
+                                    <p>사시사철 푸른 소나무처럼 변하지 않고 노력하는 사람이 되겠습니다. 소나무는 자신의 자리를 지키며, 변하지 않고 묵묵히 자신의 일을 해냅니다. 저도 소나무처럼 맡겨진 일에 변하지 않고 열심히 하는 사람이 되고 싶습니다. 또 꼼꼼함과 저의 장점인 성실함을 가지고 노력하여 이 회사에서 부족한 것을 채우고 발전하고 싶습니다.</p>
+                                </div>
+                            </li>
+                            <li class="career">
+                                <div class="bar"></div>
+                                <div class="cir" id="c1">
+                                    <p class="date">2011~2014</p>
+                                    <p class="cir_con">대전둔산중학교</p>
+                                </div>
+                                <div class="cir" id="c2">
+                                    <p class="date">2014~2017</p>
+                                    <p class="cir_con">대전대성여자고등학교</p>
+                                </div>
+                                <div class="cir" id="c3">
+                                    <p class="date">2016~2019</p>
+                                    <p class="cir_con">개업상사</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="work">
+                        <ul class="work_box">
+                            <li>
+                                <div class="circle">HTML5</div>
+                                <div class="bar" id="ba1"></div>
+                            </li>
+                            <li>
+                                <div class="circle">CSS</div>
+                                <div class="bar" id="ba2"></div>
+                            </li>
+                            <li>
+                                <div class="circle">JQUERY</div>
+                                <div class="bar" id="ba3"></div>
+                            </li>
+                            <li>
+                                <div class="circle">PHOTOSHOP</div>
+                                <div class="bar" id="ba4"></div>
+                            </li>
+                            <li>
+                                <div class="circle">ILLUSTRATOR</div>
+                                <div class="bar" id="ba5"></div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <div class="page" id="page3">
+                <div id="portfolio" class="background">
+                    <ul class="desktop">
+                        <h4 class="portfol_tit">Desktop</h4>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="데스크탑1"></a></li>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="데스크탑2"></a></li>
+                    </ul>
+                    <ul class="mobile">
+                        <h4 class="portfol_tit">Mobile</h4>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="모바일1"></a></li>
+                    </ul>
+                    <ul class="responsive">
+                        <h4 class="portfol_tit">Responsive</h4>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="반응형1"></a></li>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="반응형2"></a></li>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="반응형3"></a></li>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="반응형4"></a></li>
+                        <li><a href="#"><img src="https://placehold.it/600x400/222" alt="반응형5"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page" id="page4">
+                <div id="map" class="background">
+                    <div id="map_canvas"style="width:600px; height:400px;"></div>
+                    <p class="phone_num">010-2367-6138</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
