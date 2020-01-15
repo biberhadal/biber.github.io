@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>박슬기_포트폴리오</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="백제의 문화가 살아있는 곳, 부여">
-    <meta name="description" content="백제의 문화가 살아있는 곳, 부여">
+    <meta name="keywords" content="포트폴리오">
+    <meta name="description" content="포트폴리오">
     <!--  화면 사이즈 변환하는 태그(모바일 태그 입력 시 꼭 필요)-->
     <!--  모바일에서 스크롤을 내리면 주소창이 숨겨지고, 스크롤을 올리면 주소창이 보이게-->
     <!--  안드로이드-->
@@ -143,6 +143,7 @@
 
         /* page2 */
         #page2, #page3, #page4 {  background: repeating-linear-gradient(-45deg, #eee, #eee 1px, #99ce66 0, #99ce66 20px);}
+        #page2 { position: relative;}
         .cha_box { position: absolute;}
         .background { background-color: #fff; width: 80%; height: 80%; margin: 5% auto; box-shadow: 2px 2px 5px #333;}
         .intro { width: 45%; height: 100%; position: relative;}
@@ -212,7 +213,7 @@
         .xi-close { display: none;}
         
         /* page1 */
-        .vs { width: 25%; height: 100vh; overflow: hidden; float: left; opacity: 0.7;}
+        .vs { width: 25%; height: 100vh; overflow: hidden; float: left;}
         .img_box { width: 600%;}
         .img_box li { width: 16.7%; height: 100vh; float: left; position: relative; overflow: hidden;}
         .img_box img { width: 100vw; position: absolute;}
@@ -221,6 +222,15 @@
         #vs4 img { left: -300%;}
 
         /* page2 */
+        .cha_box { width: 48%; overflow: hidden; bottom: -25%; left: -4%;}
+        .cha_box li { width: 50%; float: left;}
+        .cha_box .arm { position: absolute; width: 35%; bottom: 20%; left: 40%; transform: rotate(-30deg); animation: 3s ani3 linear infinite; transform-origin: left bottom;}
+        .cha_box img { width: 100%;}
+        @keyframes ani3 {
+            from { transform: rotate(-30deg);}
+            50% { transform: rotate(-15deg);}
+            to { transform: rotate(-30deg);}
+        }
         .intro { float: left;}
         .work { float: right;}
         .intro::after { content: ""; display: block; width: 5px; height: 90%; background-color: #99ce66; position: absolute; top: 5%; left: 111%; border-radius: 10px;}
@@ -408,8 +418,8 @@
             </div>
             <div class="page" id="page2">
                 <ul class="cha_box">
-                    <li class="body"><img src="" alt="캐릭터 몸"></li>
-                    <li class="arm"><img src="" alt="캐릭터 팔"></li>
+                    <li class="body"><img src="./data/chac_body.png" alt="캐릭터 몸"></li>
+                    <li class="arm"><img src="./data/chac_arm.png" alt="캐릭터 팔"></li>
                 </ul>
                 <div id="aboutme" class="background">
                     <aside class="intro">
